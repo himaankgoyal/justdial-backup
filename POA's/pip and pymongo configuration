@@ -1,0 +1,15 @@
+Step 1: Check for Existing pip Installation
+1. Run the command to check if pip is already installed: sudo rpm -qa | grep pip
+
+Step 2: Download pip Installation Package
+1. Download the pip installation package using wget: wget https://dl.fedoraproject.org/pub/archive/epel/7/x86_64/Packages/p/python2-pip-8.1.2-14.el7.noarch.rpm
+
+Step 3: Install pip
+1. Install pip using yum localinstall: sudo yum localinstall python2-pip-8.1.2-14.el7.noarch.rpm
+
+Step 4: Verify pip Installation
+1. Verify pip installation by listing installed packages: sudo pip2.7 list
+
+Step 5: Install pymongo
+1. Install pymongo using pip: sudo pip2.7 install pymongo==3.8.0
+2. Alternative command (if above command fails): sudo pip2.7 install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org pymongo==3.8.0

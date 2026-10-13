@@ -1,0 +1,74 @@
+Document : to create a staging port (staging_quickquotes_backend)
+
+check live port on server
+ 
+#create a staging directory in /var/www/production/staging_quickquotes_backend and also on /var/www/production/tmp/staging_quickquotes_backend
+#change the permission of the directory created in /var/www/production and /production/tmp/ to chown apache. staging_quickquotes_backend
+#run git clone --branch staging git@192.168.12.250:root/QUICK_SERVICES.git . at /var/www/production/tmp/ to copy the data in /var/www/production/tmp/
+#git remote -v
+#conform the branch with command #git branch(stagig/live)
+#copy the /etc/nginx/conf.d/ to new file withe the name to be created and make the necessary changes in it
+#syntax check nginx -t
+#copy the /etc/php-fpm.d/ to new file withe the name to be created and make the necessary changes in it
+#check php syntax syntax -t
+#reload nginx and php
+
+
+
+#create the below mentioned script (13.150 :- /scripts/git_build_quick_services_staging.sh)
+
+
+#!/bin/bash
+
+DATE=$(date +%d-%m-%Y)
+LOCK_FILE="/tmp/git_build_quick_services_staging.lock"
+
+TMP_DIR="/var/www/production/tmp/quickquotes_backend_staging/"
+PROD_DIR="/var/www/production/quickquotes_backend_staging/"
+
+line() {
+   echo -e "\n---------------------------------------\n"
+}
+
+bigline() {
+   echo -e "\n===============================================================================\n"
+}
+
+logfile () {
+   sudo tee -a /var/log/daily_log/git_build_quick_services_staging_${DATE}.txt
+}
+
+if [ -e ${LOCK_FILE} ]; then echo "Git Update for git_build_quick_services_staging is already in progress... Exiting"; exit 1; else echo "Creating lock file ${LOCK_FILE}"; touch ${LOCK_FILE}; fi
+
+bigline | logfile ; echo -e "Git update process at `date`" | logfile; line | logfile
+
+echo -e "Git info before update\n---------------------------" | logfile
+cd ${TMP_DIR} && sudo git log | head | logfile
+line  | logfile
+
+echo -e "Updating code\n-----------------------" | logfile
+cd ${TMP_DIR} && sudo git pull | logfile
+line | logfile
+
+echo -e "Git info after code update\n--------------------" | logfile
+cd ${TMP_DIR} && sudo git log | head | logfile
+line | logfile
+
+echo -e "\n-------------- Syncing code... \n-----------------" | logfile
+
+sudo rsync -arvpP --exclude '.git' --exclude '.svn' --exclude 'ServerSet.txt' --exclude 'LoadBalancer_HealthCheck.php' ${TMP_DIR} ${PROD_DIR} | logfile
+
+sudo chown -R apache:apache ${PROD_DIR} | logfile
+
+bigline | logfile
+
+echo "Removing Lock file"
+sudo rm -rfv $LOCK_FILE
+
+
+
+
+## also create the jenkins job. For reference : http://192.168.131.150:8980/job/quick_services_backend_staging/
+
+
+

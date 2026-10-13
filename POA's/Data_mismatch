@@ -1,0 +1,19 @@
+#ps aux | grep backup
+#tailf /var/log/daily_log/Elastic_backup_`date +%d%m%y`.log 
+#less /var/log/daily_log/Elastic_backup_`date +%d%m%y`.log 
+#cat /var/log/daily_log/Elastic_backup_`date +%d%m%y`.log 
+#ps aux | grep backup
+#sudo kill -9 58263
+#ps aux | grep backup
+#cd /tmp/
+#ll | grep lock
+#rm -rf elastic_daily_backup_new.lock
+#sudo rm -rf elastic_daily_backup_new.lock
+#cat /scripts/elastic_daily_backup_new.sh
+#curl -s -X GET "192.168.38.50:9200/_cat/indices?pretty" | awk '{print $3}' | egrep -v ".elastichq" | xargs | sed -e 's/ /,/g'
+#cd
+#ll
+#vim elastic_restore_failed_UNASSIGNED_index_from_backup_manual.sh 
+#sudo screen -ls
+#sudo screen -r 79053.elastic_daily_backup_new
+#tailf output_23_march.log

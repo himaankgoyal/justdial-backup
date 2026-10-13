@@ -1,0 +1,25 @@
+################################## Kernal upgrade Activity ######################################################
+
+
+
+
+LINE="###############################################################################################################";sudo cat /proc/sys/kernel/hostname > /root/details_`date +%d%b%Y` ; sudo echo $LINE >> /root/details_`date +%d%b%Y` ; sudo /sbin/ifconfig -a >> /root/details_`date +%d%b%Y` ; sudo echo $LINE >> /root/details_`date +%d%b%Y`;sudo cat /proc/net/bonding/bond0 >> /root/details_`date +%d%b%Y`;sudo echo $LINE >> /root/details_`date +%d%b%Y` ;sudo dmidecode -t system >> /root/details_`date +%d%b%Y` ; sudo echo $LINE >> /root/details_`date +%d%b%Y` ; sudo df -h >> /root/details_`date +%d%b%Y` ; sudo echo $LINE >> /root/details_`date +%d%b%Y` ; sudo free -g >> /root/details_`date +%d%b%Y` ;sudo echo $LINE >> /root/details_`date +%d%b%Y` ;sudo netstat -ntlp >> /root/details_`date +%d%b%Y` ;sudo echo $LINE >> /root/details_`date +%d%b%Y` ; DOCK_CONT=`sudo docker ps -q`; for i in $DOCK_CONT; do echo "docker ports : " >> /root/details_`date +%d%b%Y`; sudo docker port $i >> /root/details_`date +%d%b%Y`; done; sudo echo $LINE >> /root/details_`date +%d%b%Y` ; screen -ls >> /root/details_`date +%d%b%Y` ; sudo echo $LINE >> /root/details_`date +%d%b%Y` ; sudo multipath -ll >> /root/details_`date +%d%b%Y` ;sudo echo $LINE >> /root/details_`date +%d%b%Y` ;cat /sys/class/fc_host/*/port_name >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y` ;sudo cat /etc/fstab >> /root/details_`date +%d%b%Y` ;sudo echo $LINE >> /root/details_`date +%d%b%Y` ; sudo mysqld_multi report >> /root/details_`date +%d%b%Y` ;sudo echo $LINE >> /root/details_`date +%d%b%Y` ; sudo ps auxf >> /root/details_`date +%d%b%Y` ;sudo echo $LINE >> /root/details_`date +%d%b%Y` ;sudo mount >> /root/details_`date +%d%b%Y` ; echo "history from root before activity" >> /root/details_history_`date +%d%b%Y`; sudo echo $LINE >> /root/details_history_`date +%d%b%Y`; history >> /root/details_history_`date +%d%b%Y`;
+
+
+
+
+ #curl -X PUT "192.168.24.138:9200/_all/_settings?pretty" -H 'Content-Type: application/json' -d' { "settings": { "index.unassigned.node_left.delayed_timeout": "600m"}}'
+
+ #yum install kernel kernel-headers
+
+ #Take details and stop elasticsearch one server at a time
+
+ #Reboot server
+  
+ #Once server is up make sure kernel version is updated (uname -a) and then start elastic 
+ 
+ #Once cluster health is green proceed with next node
+ 
+ After activity revert timeout value to 10
+ #curl -X PUT "192.168.24.138/_all/_settings?pretty" -H 'Content-Type: application/json' -d' { "settings": { "index.unassigned.node_left.delayed_timeout": "10m"}}'
+

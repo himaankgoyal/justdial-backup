@@ -1,0 +1,16 @@
+##################################### AVAMAR REGISTRATION ####################################################################
+
+STEP 1 
+sudo rpm -qa | grep -i avamar (check if package is there or not if not then download and install avamar package)
+
+wget https://172.29.55.136/DPNInstalls/downloads/RHEL6//AvamarClient-linux-sles11-x86-6.0.100-592.rpm (download Avamar package for RHEL 6)
+wget http://172.29.0.123/download/Avamar_setup/AvamarClient-linux-sles11-x86_64-7.0.100-427.rpm (download Avamar package for RHEL 7)
+
+sudo rpm -ivh AvamarClient-linux-(version).rpm (install avamar package)
+
+STEP 2
+Create the file    ------------- sudo vim /usr/local/avamar/var/avagent.cmd (make entry for eg. --hostname=39.64-idc.justdial.com_Sunny_Shende_08062023 )
+
+sudo vim /etc/hosts    (make entry in hosts file for eg. 192.168.29.201 IDCMUMAVM3UTL01.JD.COM IDCMUMAVM3UTL01)    
+
+Run #sudo /usr/local/avamar/bin/avregister   (enter the ip given by system team : 192.168.29.201)

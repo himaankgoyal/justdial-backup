@@ -1,0 +1,68 @@
+################################################SERVER MIGRATION TASK#####################################################################
+
+	Server Allocation  Done   Module	Stake	Status	System Team Can provide	Assign To
+	192.168.12.140	   Yes	IN_Core_Search	Sunny shende	Can take from CL 7	Yes	Himaank    (completed)
+	192.168.29.125	   Yes	Genio	        JK verma	Can take from CL 7/8	Yes	Himaank    (completed)
+	192.168.12.66	   Yes	IN_Core_Search	Sunny shende	Can take from CL 8	Yes	Himaank    (completed)
+	192.168.14.49	   Yes	MIS	        Rajeev k nair	Can take from CL 7/8	Yes	Himaank
+
+###################################################################################################################     
+Server 1      (Completed)
+
+Source server IP : 192.168.12.140       
+Destination Server Ip : 192.168.13.122    
+Free IP : (192.168.13.54)
+####################################################################################################################
+
+Server 2     (Completed)
+
+Source Server IP : 192.168.12.66
+Destination Server IP : 192.168.13.50
+Free IP : (192.168.12.165)
+
+IP:- 192.168.13.196/23
+Gateway :- 192.168.12.10
+VLAN ID :- 112
+#####################################################################################################################
+
+Server 3      (completed)
+
+Source Server IP : 192.168.29.125
+Destination Server IP : 192.168.29.40                          29.108
+Free IP : (192.168.29.108)
+
+mask- 255.255.255.0
+Gateway :- 192.168.29.10
+VLAN ID :- 129
+
+
+############################################################################################################################
+
+Server 4
+
+Source Server IP : 192.168.14.49
+Destination Server IP : 192.168.14.55                                       mysqld_upgrade
+Free IP : ()                                                               restart mysql
+
+
+#############################################################################################################################
+
+ mysqld_upgrade
+ flush tables
+ restart mysql
+ 
+ 
+ /etc/samba/
+ /etc/nginx/
+ root   /var/www/production/sales_dashboard;
+
+
+    access_log  /var/log/nginx/sales_dashboard.access.log  main;
+    error_log  /var/log/nginx/sales_dashboard.error.log ;
+    
+    
+    
+stop slave ;reset slave;change master to master_host='192.168.12.104' , master_user='XXX', master_password='password', master_log_file='XXX', master_log_pos=XXX; start slave; flush privileges;
+
+
+

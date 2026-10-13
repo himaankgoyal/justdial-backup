@@ -1,0 +1,103 @@
+Mysql server migration
+
+Step 1: take server out of production
+rename the file in opt 
+#MySQLMaster_status.sh_OOP
+
+Go to mysql and check the master ip, lag and processlist
+then Run the command 
+#mysqladmin flush-tables && mysqladmin flush-tables && mysqladmin flush-tables && mysql -e "stop slave;" && mysql -e "show slave status\G" > /ldaphome/himaankg-10122969/mysqlslave.txt && service mysqld stop
+
+#mysqladmin -uroot -p'Admin@12QW' flush-tables && mysqladmin -uroot -p'Admin@12QW' flush-tables && mysqladmin -uroot -p'Admin@12QW' flush-tables && mysql -uroot -p'Admin@12QW' -e "show master status;" > /home/himaankg-10122969/mysqlslave.txt && service mysqld stop
+
+
+#DATE=$(date +%d%b%Y); USER=himaankg-10122969; sudo mysqladmin -p flush-tables && sudo mysqladmin flush-tables -p  && sudo mysqladmin -p flush-tables && sudo mysql -p -e "STOP SLAVE;" && sudo mysql -p -e "SHOW SLAVE STATUS\G" > /home/$USER/${DATE}_slave_status.txt && sudo service mysqld stop
+
+tar -cvzf xzy.tar.gz xzy/                                      {command to tar}
+tar -xvzf xyz.tar.gz -C /var/www/production/    (-c = path of destination)    {command to untar}
+
+LINE="###############################################################################################################"; sudo ps auxf > /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; sudo cat /proc/sys/kernel/hostname >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; sudo /sbin/ifconfig -a >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; sudo cat /proc/net/bonding/bond0 >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; sudo dmidecode -t system >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; cat /sys/class/fc_host/*/port_name >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; sudo cat /etc/fstab >> /root/details_`date +%d%b%Y` ; sudo echo $LINE >> /root/details_`date +%d%b%Y`; sudo mount >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; sudo multipath -ll >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; sudo mysqld_multi report >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; sudo df -h >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; sudo free -g >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; sudo  netstat -ntlp >> /root/details_`date +%d%b%Y`; sudo mysql -e "show slave status\G;show slave hosts;show master status;" >> /root/details_`date +%d%b%Y`; sudo echo $LINE >> /root/details_`date +%d%b%Y`; cat /proc/version >> /root/details_`date +%d%b%Y` ; uname -a >> /root/details_`date +%d%b%Y`;
+
+
+
+
+
+check package vsftpd on source and destination server and start the service
+#sudo rpm -qa | grep -i vsftpd
+
+Change the ownership of /var/lib/SQL on source server
+#chown -R web_backup. /var/lib/SQL
+
+#chown -R mysql. /var/lib/SQL
+
+Create a screen in Destination {(Server screen -R screen_name) follow the brelow mentioned steps to migrate date from source to destination freom the path /var/lib/SQL}
+#cd /var/lib/SQL
+#lftp roopesh@192.168.12.99:
+lftp roopesh@192.168.12.99:~> #pwd
+ftp://roopesh@192.168.12.99
+lftp roopesh@192.168.12.99:~> #lpwd
+/var/lib/SQL
+lftp roopesh@192.168.12.99:~> #cd /var/lib/SQL
+cd ok, cwd=/var/lib/SQL
+lftp roopesh@192.168.12.99:/var/lib/SQL> pwd
+ftp://roopesh@192.168.12.99/%2Fvar/lib/SQL
+lftp roopesh@192.168.12.99:/var/lib/SQL> lpwd
+/var/lib/SQL
+lftp roopesh@192.168.12.99:/var/lib/SQL> #mirror -c
+
+IP Swap on Source  Server first
+Go to network-scripts directory
+#cd /etc/sysconfig/network-scripts/
+Put the extra IP provided by system team in the file ifcfg-bond0 located in the directory /etc/sysconfig/network-scripts/
+Then restart the network services
+#service network restart
+
+IP Swap on Destination Server
+Go to network-scripts directory
+#cd /etc/sysconfig/network-scripts/
+Put the source server IP in the file ifcfg-ens192 located in the directory /etc/sysconfig/network-scripts/
+Then restart the network services
+#service network restart
+
+Run the below command on Destination Server 
+sudo hostnamectl set-hostname 38-80-IDC.justdial.com
+sudo hostnamectl set-hostname 38-80-IDC.justdial.com --pretty
+sudo hostnamectl set-hostname 38-80-IDC.justdial.com --static
+sudo hostnamectl set-hostname 38-80-IDC.justdial.com --transient
+
+run the below command on Source Server
+hostnamectl set-hostname 38-25_OLD-IDC.justdial.com
+hostnamectl set-hostname 38-25_OLD-IDC.justdial.com --pretty
+hostnamectl set-hostname 38-25_OLD-IDC.justdial.com --static
+hostnamectl set-hostname 38-25_OLD-IDC.justdial.com --transient
+
+add in ------>   cd /etc/service
+
+mysqlchk        9200/tcp                # mysqlchk
+comment ---->  #wap-wsp         9200/tcp                # WAP connectionless session service
+comment ---->  #wap-wsp         9200/udp                # WAP connectionless session service
+
+
+
+Now start the mysqld service on destination and check the error logs
+#serviec mysqld start
+#cat /var/lib/SQL/mysqld.log
+
+
+sudo mkfs.ext4 /dev/sdb
+sudo mkdir -p /var/lib/SQL
+sudo mount /dev/sdb /var/lib/SQL
+
+##############################################################################################################################################
+sudo mysqldump mysql > /home/prashant/mysql_12103.sql
+sudo mysqldump mysql user > /home/prashant/user_12103.sql
+
+sudo mysql mysql > mysql_12103.sql
+
+stop slave ;reset slave;change master to master_host='XXX' , master_user='XXX', master_password='password', master_log_file='XXX', master_log_pos=XXX; start slave; flush privileges;
+###############################################################################################################################################
+
+Make sure you are taking below variables correctly :
+Relay_Master_Log_File for MASTER_LOG_FILE ;
+Exec_Master_Log_Pos for MASTER_LOG_POS .
+

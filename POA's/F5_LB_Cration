@@ -1,0 +1,31 @@
+============== SNAT_UAE-org.justdial.com_1131 ===============
+(1) ping 192.168.131.196 (should not reachable) --->
+
+(2) Local Traffic ›› Address Translation-> SNAT Pool List:
+SNAT_UAE-org.justdial.com_1131
+192.168.131.196%1131
+(3) Local Traffic --> Monitor --> Add according to name and update below sections:
+---name
+HC_UAE-org.justdial.com_1131
+---Description
+HC_UAE-org.justdial.com_1131   
+type : HTTP
+Send String
+GET /\r\n (if healthcheck not provided)
+GET /health-check HTTP/1.0 \r\n
+(4) Local Traffic --> Pool
+name : Pool_UAE-org.justdial.com_1131
+rs_IP%1131 ---> port_no        also add the server in the LB
+profile:- sellercentral-ONCP-nodejs_xforwarded_for_1131  ----> Insert X-Forwarded-For ---->  select enable 
+
+vs_UAE-org.justdial.com_1131
+source add: 0.0.0.0%1131/0
+dest adds: 192.168.131.196%1131
+http profile: (client) :
+source address translation: SNAT
+snat pool : (select yours)
+Default Pool : select your pool (don't forget)
+
+
+
+vs_UAE-org.justdial.com_1131

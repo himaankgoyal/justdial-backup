@@ -1,0 +1,32 @@
+step 1 : login into 6.75 and check below query and value and note it down.
+
+select * from webporting_process_log.EnableRedisPurge;   3
+select * from webporting_process_log.EnableRedis;        4
+
+
+step 2 : change_cluster_flag_redis_elastic_vn_dvn_live (jenkins)
+firstly :  	ENV	PRODUCTION
+ 	MODULE	COMPANY_REDIS_PURGE
+ 	FLAG	 0
+
+MODULE	COMPANY_REDIS_FETCH
+ 	FLAG	2
+ 	
+When we are using flag 2 in company_redis_fetch then we need to work on cluster 1
+
+Step 3 : conform the traffic by running the command monitor
+ #redis-cli -h 192.168.42.212  -a 'W365erv!ce5' -c monitor
+ 
+Step 4 :
+stop the services and then upgrade the kernel on all the servers and then reboot then one by one
+ 	
+Step 5 : Afert this is Done run below
+
+ENV	PRODUCTION
+ 	MODULE	COMPANY_REDIS_FETCH
+ 	FLAG	1
+MODULE	COMPANY_REDIS_PURGE
+ 	FLAG	 3   
+
+step 6 :#log process with status code 400 
+LB IP : 8.11,8.12,20.222

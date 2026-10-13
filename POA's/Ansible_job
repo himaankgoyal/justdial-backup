@@ -1,0 +1,23 @@
+Ansible job to check redis is enabled or disable on boot
+
+
+---
+ - hosts: redis
+   remote_user: web_backup
+   become: yes
+   tasks:
+   - name: Run command
+     #shell:  systemctl is-enabled redis
+     shell: systemctl status redis | awk 'NR==2 {print $0}' | awk '{print $(NF-3)}'
+     register: redis_status
+   - name: debug
+     debug:
+       msg: "{{redis_status.stdout_lines }}"
+   - name: Store redis info
+     lineinfile:
+       path: /tmp/test-redis_status.txt
+       line: "{{inventory_hostname}} {{redis_status.stdout_lines }}"
+       create: yes
+     delegate_to: 192.168.11.123
+     
+   

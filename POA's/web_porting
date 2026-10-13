@@ -1,0 +1,41 @@
+update webporting_process_log.tbl_db_servers set warmup_status='C' where  master is null and db_set='1'  and ip_address='192.168.12.134';\
+
+update webporting_process_log.tbl_db_servers set warmup_status='C' where db_set='1' and server_role='www' and ip_address='192.168.12.152' ;
+
+
+
+###############################################################################################################################################
+
+Refer this link to check Set,Status,Slave,Master_Host,Slave_Lag on slaves of 12.103,12.104,12.105
+http://192.168.12.234:999/webporting_slave_status_qq.php
+
+
+1. Comment crons given by Ashwin Sawai on 4 servers
+
+2. Take set 2 out (observe load on DB set servers for 5-10 minutes)
+log into 192.168.6.75
+use webporting_process_log;
+update tbl_db_servers set warmup_status='R' where server_role='www' and master is null and db_set='2';
+
+3. Take cssh for all set 1 slaves ( apprx 30+ servers ) and stop slave and monitor webporting qq page
+mysql > stop slave;
+
+4. Run SP on all 3 master servers in screen
+call webporting_check.sp_rating_230419();
+
+5. Once SP completes wait for lag to recover on all set 2 slaves, uncomment the crons an again wait for 0 lag
+
+6. Take  set 2 in prod:
+use webporting_process_log;
+update tbl_db_servers set warmup_status='C' where server_role='www' and master is null and db_set='2';
+
+7. wait for 2 mins and Take set 1 out of prodution: ( IMP NOTE- Always make sure the other set is in production before taking a set OOP)
+update tbl_db_servers set warmup_status='R' where server_role='www' and master is null and db_set='1';
+
+8. Take cssh for all 30+ slave and start slave on set 1
+mysql > start slave;
+
+9. Once lag is 0 on all slaves take set 1 in production.
+update tbl_db_servers set warmup_status='C' where server_role='www' and master is null and db_set='1';
+
+###########################################################################################################################################

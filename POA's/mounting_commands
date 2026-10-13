@@ -1,0 +1,19 @@
+*Normal Mounting**
+1. First check which disk is available for mounting ---> $ sudo lsblk or fdisk -l (for full details)
+
+2. Then mount that on mount point ---> $ sudo mount -t ext4 /dev/sdb /var/log/nginx (Paths can be different) if mounted then no need to format.
+And if not mounted then we need to format first and confirm with seniors
+
+3. For format the file System's partition ---> $ sudo mkfs -t ext4 /dev/sdb (Paths can be different)
+
+4. For making permanent that partition by entering the entry in /etc/fstab file
+like that ---> $ sudo vim /etc/fstab >>>
+
+>——————> “UUID <dest_dir> <file_type> <options> <dump> <pass>" (Paths can be different) this is for requirement basis entry
+e.g.:-
+(i). UUID /var/log/nginx ext4 defaults,_netdev,noatime,barrier=0 0 0
+
+5. for finding UUID ---> $ sudo blkid
+
+6. Now check ---> $ df -hT or df -h
+

@@ -1,0 +1,48 @@
+
+
+Note:- Some kibana have multiple indexes. Ex:- 192.168.42.83:5601 kibana also has SSO index in it.
+
+Plz use listed below kibana queries for fetching live data.
+
+WWW Kibana Queries:
+
+for 4xx user:- response:[400 TO 499] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"api" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND  !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"/list" And !request:"JdSocial" AND !request:"jdpay2" AND !request:"_next"
+
+
+for 5xx user:- response:[500 TO 504] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"api" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND  !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"/list" And !request:"JdSocial" AND !request:"jdpay2" AND !request:"_next"
+
+
+for 4xx gbot:- response:[400 TO 499] AND request_header_agent: ("AdsBot-Google" OR "Googlebot")
+
+for 5xx gbot:- response:[500 TO 504] AND request_header_agent: ("AdsBot-Google" OR "Googlebot")
+
+
+
+
+
+
+TOUCH Kibana Queries:
+
+for 4xx user:- response:[400 TO 499] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND  !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"api"
+
+for 5xx user:- response:[500 TO 504] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND  !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"api"
+
+for 4xx gbot:- response:[400 TO 499] AND request_header_agent: ("AdsBot-Google" OR "Googlebot")
+
+for 5xx gbot:- response:[500 TO 504] AND request_header_agent: ("AdsBot-Google" OR "Googlebot")
+
+
+For other kibana: 
+
+4xx query :- response:[400 TO 499]
+
+5xx query:- response:[500 TO 504]
+
+Note:- Always check for 4xx and 5xx on production related modules in regular intervals.
+
+On nagios 192.168.13.123 search 192.168.13.123 and look for sendvcode. The count is to be reported to Nilkanth Sir everyday by 10 PM on response group.
+
+
+
+
+Grafana Dashboard ip for monitoring ELK 4xx 5xx, Fatal errors, Hostwise 4xx 5xx is 192.168.41.12:3000

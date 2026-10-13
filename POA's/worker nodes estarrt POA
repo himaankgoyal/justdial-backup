@@ -1,0 +1,35 @@
+POA:
+
+#Login to master node: 192.168.42.124
+
+#Run below commands:
+
+##kubectl cordon <node-name>      (after this wait fo 2 mins)    (it should show shedulingdisabled)
+                                 
+##kubectl drain <node-name> --ignore-daemonsets --delete-emptydir-data     (after this wait fo 2 mins)   it should not show hostname in the dashboard
+
+#Check if the pods are created on worker node
+http://172.29.64.66/communication-k8/
+
+#Go to worker node example 24-97-idc.justdial.com
+
+Reboot worker node 192.168.24.97
+
+kubectl uncordon <node-name>             (after this wait fo 2 mins)
+kubectl get no
+
+#Check if the pods are created on worker node
+http://172.29.64.66/communication-k8/
+
+#Do it for below all host names:
+
+Hostnames:
+24-97-idc.justdial.com
+24-98-idc.justdial.com
+24-99-idc.justdial.com
+42-246-idc.justdial.com
+42-247-idc.justdial.com
+42-248-idc.justdial.com
+42-249-idc.justdial.com
+
+Note reboot should be on worker nodes not master node
