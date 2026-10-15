@@ -1,0 +1,26 @@
+#!/bin/bash
+# Name :- Himaank Goyal
+# Date :- 12 May 2023
+# Milestone :- To check process running or not
+# Stake :- Meeta . B / Pravin Kucha / Linux
+#
+
+## Variables 
+DATE=`date +%d-%m-%Y-%c`
+
+
+COUNT=$( ps -ef | grep '/usr/bin/curl 192.168.14.101:3006/jd-cash/process/deals/intermediate-to-kafka'  | grep -v 'grep' -c )
+if [ $COUNT -eq 0 ];then
+	echo "Starting intermediate-to-kafka process at `date`"
+	/usr/bin/curl "192.168.14.101:3006/jd-cash/process/deals/intermediate-to-kafka" >> /var/log/daily_log/intermediate-to-kafka_`date +\%d\%m\%y`.log 2>&1
+	echo -e "completed the intermediate-to-kafka process at `date`" 
+	
+else
+	echo "Process intermediate-to-kafka already running checked at `date`"
+	exit 0
+fi
+
+
+
+
+
