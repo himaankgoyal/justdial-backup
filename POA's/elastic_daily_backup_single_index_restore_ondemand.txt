@@ -9,7 +9,7 @@ CLEANUP=$(date +%Y%m%d -d "8 days ago")
 USERIP="192.168.41.33"
 GBOTIP="192.168.41.105"
 
-INDEX_LIST="mkp_mart_sellers"
+INDEX_LIST="pbank_live"
 
 line () {
   echo "-----------------------------------------------"
@@ -69,25 +69,25 @@ curl -X POST "${GBOTIP}:9200/_snapshot/ondemand_jd_b2b_${DATE}/${INDEX}_${DATE}/
   \"ignore_unavailable\": true,
   \"include_global_state\": false,              
   \"rename_pattern\": \"(.+)\",
-  \"rename_replacement\": \"${INDEX}_${DATE}\",
-  \"include_aliases\": false
+  \"rename_replacement\": \"${INDEX}_${DATE}_test\",
+  \"include_aliases\": true
 }
 "
 
 
-curl -X POST "${GBOTIP}:9200/_aliases?pretty" -H 'Content-Type: application/json' -d"
-{
-  \"actions\" : [
-    { \"add\":  { \"index\": \"${INDEX}_${DATE}\", \"alias\": \"$INDEX\" } },
-    { \"remove_index\": { \"index\": \"${INDEX}_${CLEANUP}\" } }
-  ]
-}
-"
+#curl -X POST "${GBOTIP}:9200/_aliases?pretty" -H 'Content-Type: application/json' -d"
+#{
+#  \"actions\" : [
+#    { \"add\":  { \"index\": \"${INDEX}_${DATE}\", \"alias\": \"$INDEX\" } },
+#    { \"remove_index\": { \"index\": \"${INDEX}_${CLEANUP}\" } }
+#  ]
+#}
+#"
 
 curl -X POST "${GBOTIP}:9200/_aliases?pretty" -H 'Content-Type: application/json' -d"
 {
   \"actions\" : [
-    { \"add\":  { \"index\": \"${INDEX}_${DATE}\", \"alias\": \"$INDEX\" } }
+    { \"add\":  { \"index\": \"${INDEX}_${DATE}_test\", \"alias\": \"$INDEX\" } }
   ]
 }
 "
@@ -108,4 +108,3 @@ done
 #
 #echo "##### End Time : `date` #####"
 #line
-

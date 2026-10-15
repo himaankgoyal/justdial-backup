@@ -1,0 +1,60 @@
+################################################################################
+         HARDENING AND BONDING
+############################################################################
+22  [2019-11-27] [02:46:05] df -h
+   23  [2019-11-27] [02:46:05] cd /
+   24  [2019-11-27] [02:46:05] du -hsc *
+   25  [2019-11-27] [02:46:05] cd
+   26  [2019-11-27] [02:46:05] ip r l
+   27  [2019-11-27] [02:46:05] ping www.google.com
+   28  [2019-11-27] [02:46:05] cat /etc/redhat-release
+   29  [2019-11-27] [02:46:05] yum install vim net-tools wget sysstat stat device-mapper-multipath* vsftpd lftp psmisc utils.pm yum-utils
+   30  [2019-11-27] [02:46:05] dmidecode -t 1
+   31  [2019-11-27] [02:46:05] wget http://172.29.0.123/download/Centos7_configure.sh
+   32  [2019-11-27] [02:46:05] ll -lrth
+   33  [2019-11-27] [02:46:05] chmod +x Centos7_configure.sh
+   34  [2019-11-27] [02:46:05] ll -lrth
+   35  [2019-11-27] [02:46:05] ./Centos7_configure.sh
+   36  [2019-11-27] [02:46:05] yum update -y
+   37  [2019-11-27] [02:46:05] service NetworkManager status
+   38  [2019-11-27] [02:46:05] service NetworkManager stop
+   39  [2019-11-27] [02:46:05] service NetworkManager status
+Need to disable NetworkManager as well
+   40  [2019-11-27] [02:46:05] systemctl disable NetworkManager
+   41  [2019-11-27] [02:46:05] service NetworkManager status
+   42  [2019-11-27] [02:46:05] ifconfig
+   43  [2019-11-27] [02:46:05] ip r l
+   44  [2019-11-27] [02:46:05] init 6
+  
+  
+   BONDING
+   history
+   44  [2019-11-27] [02:30:21] sudo ifconfig
+   45  [2019-11-27] [02:30:35] sudo ethtool enp3s0f0
+   46  [2019-11-27] [02:30:49] sudo ethtool enp3s0f1
+   47  [2019-11-27] [02:31:00] sudo ethtool ens1f0
+   48  [2019-11-27] [02:31:15] sudo ethtool ens1f1
+   49  [2019-11-27] [02:31:29] sudo ethtool ens1f2
+   50  [2019-11-27] [02:31:33] sudo ethtool ens1f3
+   51  [2019-11-27] [02:31:42] sudo ethtool enp3s0f0
+   52  [2019-11-27] [02:31:49] sudo ethtool enp3s0f1
+   53  [2019-11-27] [02:31:58] ll -lrth
+   54  [2019-11-27] [02:32:07] sudo ifconfig
+   55  [2019-11-27] [02:32:56] sudo ethtool enp3s0f0
+   56  [2019-11-27] [02:33:04] sudo ethtool enp3s0f1
+   57  [2019-11-27] [02:34:23] ll -lrth
+   58  [2019-11-27] [02:34:29] ./Centos7_configure.sh
+   59  [2019-11-27] [02:35:13] sudo service network status
+   60  [2019-11-27] [02:35:29] sudo service network restart
+   61  [2019-11-27] [02:37:41] sudo ifconfig
+   62  [2019-11-27] [02:37:57] cat /proc/net/bonding/bond0
+   63  [2019-11-27] [02:38:48] ip r l
+   64  [2019-11-27] [02:39:34] sudo ifdown enp3s0f0
+   65  [2019-11-27] [02:39:37] cat /proc/net/bonding/bond0
+   66  [2019-11-27] [02:40:45] sudo ifup enp3s0f0
+   67  [2019-11-27] [02:40:50] cat /proc/net/bonding/bond0
+   68  [2019-11-27] [02:41:04] sudo ifdown enp3s0f1
+   69  [2019-11-27] [02:41:06] cat /proc/net/bonding/bond0
+   70  [2019-11-27] [02:42:43] sudo ifup enp3s0f1
+   71  [2019-11-27] [02:42:45] cat /proc/net/bonding/bond0
+   72  [2019-11-27] [02:45:02] history

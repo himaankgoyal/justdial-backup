@@ -1,0 +1,211 @@
+# Mysql tweaks by ranjeet
+# The following options will be passed to all MySQL clients
+[client]
+port		= 3306
+socket		= /var/lib/SQL/mysql.sock 
+
+# START 
+[mysqld_multi] 
+mysqld = /usr/bin/mysqld_safe 
+mysqladmin = /usr/bin/mysqladmin 
+
+
+# Here follows entries for some specific programs
+# The MySQL server
+[mysqld]
+port		= 3306
+socket		= /var/lib/SQL/mysql.sock 
+user            = mysql 
+#binlog_format	= mixed
+binlog_format	= STATEMENT
+#skip-locking
+datadir         = /var/lib/SQL/mysql 
+tmpdir		= /var/lib/SQL/mysql_tmpdir
+
+
+#--------------------------- Audit Points start -------------------------------
+
+plugin_dir=/usr/lib64/mysql/plugin/
+
+### Validate Password
+plugin-load-add=validate_password.so   #BBB
+validate-password=FORCE_PLUS_PERMANENT #BBB
+validate_password_length=8             #BBB
+validate_password_mixed_case_count=1   #BBB
+validate_password_number_count=1       #BBB
+validate_password_special_char_count=1 #BBB
+validate_password_policy=1             #BBB
+password_history=5                     #BBB
+password_reuse_interval=60             #BBB
+
+# Connection Control
+plugin-load-add=connection_control.so
+connection_control_failed_connections_threshold=3  #BBB
+connection_control_max_connection_delay=60000
+
+plugin-load=audit_log.so
+audit_log=FORCE_PLUS_PERMANENT
+#--------------------------- Audit Points END -------------------------------
+
+#federated
+#archive
+#innodb
+#blackhole
+# Added on 24/06/2016  - On recommendation of SOC team
+#rajveer 23jul2021 secure_auth=ON
+#sql-mode="NO_AUTO_CREATE_USER" # Commented by Keyur on 13 Dec 2019 for errors related to Field doesn't have a default values 
+#sql-mode="NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+sql-mode="ERROR_FOR_DIVISION_BY_ZERO ,IGNORE_SPACE ,ALLOW_INVALID_DATES" 
+
+log_bin_trust_function_creators=TRUE
+
+# skip binary logging generating
+skip-log-bin 
+
+##Slave setup block
+server-id=17xx
+report-host=192.168.17.xx
+
+### START Variables for charachter 
+default_authentication_plugin=mysql_native_password 
+character-set-server=utf8	
+collation-server = utf8_unicode_ci	
+character-set-filesystem=binary		
+#END
+
+
+###############################################
+log-bin=/var/lib/SQL/binary_log/mysql-bin.log
+#############################################
+##relay-log=/var/lib/SQL/binary_log/235-relay-bin
+############################################
+
+### Option to enable infile from all locations. 
+secure-file-priv = "" 
+#JK for join queries
+group_concat_max_len=500000 #
+open-files-limit = 15000
+
+#log_slave_updates=ON
+sync_binlog=1
+expire_logs_days=5
+max_binlog_size=1024M
+#
+#rajveer 23jul2021 #####GTID##### START
+#gtid_mode=ON 
+#enforce-gtid-consistency
+
+#master_info_repository=TABLE
+#relay_log_info_repository=TABLE
+#log-slave-updates=ON
+#rajveer 23jul2021 ############ END
+
+
+#End of Master setup block
+default-storage-engine = MyISAM
+#replicate-wild-ignore-table=mysql.user
+
+
+
+#Innodb section
+## You can write your other MySQL server options here
+## ...
+##innodb_force_recovery=4
+innodb_data_home_dir =
+##
+## Data files must be able to hold your data and indexes
+innodb_data_file_path=ibdata1:2800M;ibdata2:2800M:autoextend
+##
+## Set buffer pool size to 50-80% of your computer's memory,
+## but make sure on Linux x86 total memory usage is < 2GB
+##innodb_buffer_pool_size=8G
+innodb_buffer_pool_size=32G  ### old value= 4G
+innodb_buffer_pool_instances=16  ### old value= 8
+## innodb_additional_mem_pool_size=500M
+#rajveer 23jul2021 innodb_additional_mem_pool_size=1M #Shantanu
+##innodb_log_group_home_dir=
+##
+innodb_log_files_in_group=2
+##
+## Set the log file size to about 25% of the buffer pool size
+innodb_log_file_size=1G
+##innodb_log_buffer_size=50M
+innodb_log_buffer_size=8M #Shantanu
+##
+innodb_flush_log_at_trx_commit=1
+innodb_lock_wait_timeout=50
+##
+## Uncomment the next lines if you want to use them
+##innodb_thread_concurrency=5
+innodb_file_per_table
+#
+##End of Innodb section
+#
+
+#logs
+slow_query_log=1
+#log=/var/log/mysql/mysqld.log
+##rajveer 23jul2021 slow-query-log=/var/lib/SQL/slow-queries.log
+log-error               =       /var/lib/SQL/mysqld.log
+slow_query_log_file     =       /var/lib/SQL/slow-queries.log 
+long_query_time=2
+#long_query_time=4
+
+#stop name resolv
+skip-name-resolve
+skip-slave-start
+
+max_connections = 1600
+max_user_connections = 1600
+max_connect_errors=50
+
+wait_timeout=600
+connect_timeout=5
+interactive_timeout=120
+
+join_buffer_size=1M
+read_buffer_size=4M
+read_rnd_buffer_size=16M
+#table_cache=512
+table_open_cache=512 #
+max_allowed_packet=512M
+
+# key_buffer is depcrecated - Mitul <mitul@enterux.com>
+#key_buffer=1024M
+key_buffer_size=6144M
+
+sort_buffer_size = 2M
+myisam_sort_buffer_size = 64M
+
+#rajveer 23jul2021 thread_cache=512
+#rajveer 23jul2021 thread_concurrency=8 #number of cpus *2
+thread_cache_size=40
+thread_stack=256K
+
+#to allow simultaneous insert when myisam has obtained Exclusive lock
+concurrent_insert=2
+
+##LIquery_cache_limit=1M
+##LIquery_cache_min_res_unit=1
+##LIquery_cache_size=512M
+#rajveer 23jul2021 query_cache_type=0
+#skip-bdb
+#group_concat_max_len = 3072
+#group_concat_max_len = 500000
+group_concat_max_len = 200000
+ft_min_word_len = 1
+ft_stopword_file = /etc/stopword.txt
+
+[mysqldump]
+quick
+max_allowed_packet =256M
+
+[myisamchk]
+key_buffer = 256M
+sort_buffer_size = 256M
+read_buffer = 2M
+write_buffer = 2M
+
+[mysqlhotcopy]
+interactive-timeout
+

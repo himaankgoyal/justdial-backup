@@ -1,0 +1,18 @@
+adduser dialer
+passwd dialer 
+/home/
+ll -lrth | grep dialer
+cd /etc/samba/
+vim /etc/samba/smb.conf
+history | grep list
+sudo pdbedit -L -v
+sudo pdbedit -L -v | grep Unix username
+sudo pdbedit -L -v | grep "Unix username"
+sudo smbpasswd -a dhakshinap
+sudo pdbedit -L -v | grep "Unix username"
+testparm 
+service smb status
+service smb reload
+service smb status
+history
+

@@ -1,0 +1,87 @@
+#######################################################################################
+Upgrade Mysql 5.5 to MariaDB 11.5
+The Bridge (MySQL 5.5 → MariaDB 10.4)
+#######################################################################################
+
+1. Remove MySQL 5.5
+sudo systemctl stop mysqld
+sudo rpm -qa | grep -i sql
+sudo yum remove mysql-*
+
+2. Configure 10.4 Repository
+Edit /etc/yum.repos.d/mariadb.repo:
+[mariadb]
+name = MariaDB
+baseurl = https://archive.mariadb.org/mariadb-10.4/yum/centos7-amd64
+gpgkey=https://archive.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+
+3. Install & Initialize 10.4
+sudo yum clean all
+sudo yum install MariaDB-server MariaDB-client
+
+4. Configuration Tuning (/etc/my.cnf)
+[mariadb]
+datadir = /var/lib/SQL/mysql
+user = mysql
+socket = /var/lib/mysql/mysql.sock
+log-error = /var/lib/SQL/mysqld.log
+innodb_purge_threads = 0
+innodb_strict_mode = OFF
+innodb_checksum_algorithm = innodb
+
+5. Start and Upgrade
+sudo systemctl start mariadb
+sudo mariadb-upgrade or mysql-upgrade
+Verification: Run mysql -e "SHOW ENGINE INNODB STATUS\G;" and check logs for any "Corrupt" messages.
+
+######################################################################################
+The Leap (MariaDB 10.4 → MariaDB 11.5)
+######################################################################################
+
+1. Swap Repositories
+Update /etc/yum.repos.d/mariadb.repo to point to 11.5:
+[mariadb]
+name = MariaDB
+baseurl = https://archive.mariadb.org/mariadb-11.5/yum/centos7-amd64
+gpgkey = https://archive.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck = 1
+IF gpgkey is not working
+[mariadb] name = MariaDB 
+baseurl = http://yum.mariadb.org/11.5/centos7-amd64 
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB 
+gpgcheck=1
+sudo rpm --import https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+
+2. Re-install Packages
+sudo systemctl stop mariadb
+sudo yum remove MariaDB*
+sudo yum clean all
+sudo yum install MariaDB-server MariaDB-client
+
+3. Final Configuration Adjustments
+Update /etc/my.cnf
+[mariadb]
+datadir = /var/lib/SQL/mysql
+user = mysql
+socket=/var/lib/mysql/mysql.sock
+log-error=/var/lib/SQL/mysqld.log
+#This is vital for the 5.5 -> 10.4 jump with a huge dataset
+#innodb_force_recovery = 0
+innodb_purge_threads = 0
+#innodb_strict_mode = OFF
+innodb_data_file_path=ibdata1:2800M;ibdata2:2800M:autoextend
+# # 10.4 still supports these, which help with 5.5 files
+#innodb_checksum_algorithm = innodb
+innodb_buffer_pool_size = 16G
+innodb_checksum_algorithm = crc32
+
+4. Final Upgrade & Optimization
+sudo systemctl start mariadb
+sudo mariadb-upgrade
+# Crucial for the 11.x optimizer to work correctly with old data:
+mariadb-check --analyze --all-databases
+
+#############################
+14.134 reference 
+#############################

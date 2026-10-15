@@ -1,0 +1,71 @@
+
+manoj@BLR-1LYJBS3:~$ ms 13 105
+Logging on 192.168.13.105
+Last login: Wed Mar 11 18:54:14 2026 from 172.29.183.105
+[manojcn-10104254@13-105-IDC ~]$ cat /usr/share/redisflags/search_redisset.txt
+2[manojcn-10104254@13-105-IDC ~]$ cat /var/www/production/mobileapi.justdial.com/redisset.txt
+1
+[manojcn-10104254@13-105-IDC ~]$
+current value
+
+###################################################################################
+
+POA for server migration for IN_Website/Misc_Web_Redis	 SERVER --- 
+
+Step1.
+comment cron on server: 192.168.11.64
+###### Redis Webiste monitoring ####
+*/1 * * * * bash /scripts/redis_website_check.sh >> /var/log/daily_log/redis_website_`date +"\%d_\%m_\%y"`.log 2>&1
+*/1 * * * * bash /scripts/check_redis_website_search.sh >> /var/log/daily_log/check_redis_website_search_`date +"\%d_\%m_\%y"`.log 2>&1
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Change pointing from mysql on 192.168.6.75
+select * from webporting_process_log.EnableRedisWebsite;
+update webporting_process_log.EnableRedisWebsite set value=0;
+
+
+select * from webporting_process_log.tbl_redis_search_website;
+update webporting_process_log.tbl_redis_search_website set value=0;
+
+Confirm value to zero
+select * from webporting_process_log.EnableRedisWebsite;
+
+select * from webporting_process_log.tbl_redis_search_website;
+____________________________________________________________________________________________________________________________________________
+Check on 13.105 
+cat /usr/share/redisflags/search_redisset.txt| xargs echo 
+cat /var/www/production/mobileapi.justdial.com/redisset.txt
+
+Value must be 0 ---
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+delete dump.rdb file on source server 192.168.11.71 --- then RUN BGSAVE -- check in logs bgsave started and end bgsave terminated successfully 
+
+redis-cli
+> BGSAVE
+
+
+
+
+ (Stop running redis on 192.168.11.71 ) AND CRON
+Later  copy whole  /var/lib/redis from source 11.71 to destination 11.50
+
+
+Swap IP addess from old (11.71 <--> 11.50) & make sure permission of directory is redis:redis and copy /etc/redis/redis.conf to destination server verify the bind ip address .. 
+
+check premission  ls -ld /var/lib/redis
+
+Pending to copy sysmon dir and files  /opt/ , /scripts, cron file
+
+ADD NAGIOS CHECKS ALSO 
+
+service redis start and wait for master link up 
+
+
+
+
+Check keys count with master are matched from master and load data in memory
+
+
+once actvity completed revert back  on 6.75 flag value and uncomment above cron and check value on 13.105, and check functionality with stakes

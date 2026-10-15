@@ -1,0 +1,39 @@
+
+
+Stop crond at 10pm on 192.168.17.233 and 17.235 
+Take 17.233 ( current master ) server oop
+sudo mv /opt/MySQLMaster_status.sh /opt/MySQLMaster_status.sh_OOP
+IMP: Take force offline from LB
+apply iptbales rules on 17.233
+sudo iptables -I INPUT -p tcp --dport 3306 -s 192.168.17.233 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 3306 -s 192.168.17.235 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 3306 -s 192.168.17.234 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 3306 -s 192.168.17.232 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 3306 -s 192.168.12.78 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 3306 -s 192.168.151.123 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 3306 -s 192.168.13.123 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 3306 -s 192.168.11.123 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 3306 -s 192.168.151.124 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 3306 -j DROP
+sudo iptables -A INPUT -s 172.29.0.0/16 -p tcp -m tcp --dport 2222 -j DROP
+service iptables save
+IMP: Once lag is 0 on all slaves
+stop slave; on all ( or run until lag 0 command of you have)
+Login 17.235
+STOP SLAVE; RESET SLAVE; RESET MASTER; show master status\G;
+Check show master status; it will show new binlog file - 0001 and starting position ( ex: 120 )
+Attach all slaves to new master 17.235 (verify MASTER_LOG_FILE and MASTER_LOG_POS)
+stop slave;reset slave;CHANGE MASTER TO MASTER_HOST='192.168.17.235',MASTER_USER='repl', MASTER_PASSWORD='password', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=120;start slave;
+once all slaves connected to new master, flush iptables on new master 17.235
+sudo iptables F
+sudo iptables-save
+swap /scripts and crond between both servers
+put new master into LB
+- enable on lb, move /opt/MySQLMaster_status.sh healthcheck and restart xinetd
+verify live traffic and audit logs generating on 17.233 and 17.235
+Ask testing team to test functionality.
+Ankit - 8767040870
+Share these screenshot  proofs on jira ticket
+https://jdjira.justdial.com/browse/DCM-1395
+Logs or screenshots confirming audit trail generation on alternate servers
+Proof of audit log service restart post-downtime 

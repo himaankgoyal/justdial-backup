@@ -1,0 +1,31 @@
+{{ Before installing pre-check if these packages are available}}
+sudo rpm -qa | grep -i "libffi"
+libffi-3.0.13-19.el7.x86_64
+libffi-devel-3.0.13-19.el7.x86_64
+[rajveer_10018295@24-162-IDC ~]$ sudo rpm -qa | grep -i "openssl"
+openssl-devel-1.0.1e-48.el6.x86_64
+pyOpenSSL-0.13.1-2.el6.x86_64
+openssl-1.0.1e-48.el6.x86_64
+[pankaj@41-201-IDC ~]$ sudo rpm -qa | grep -i "zlib"
+zlib-1.2.7-20.el7_9.x86_64
+zlib-devel-1.2.7-20.el7_9.x86_64
+[pankaj@41-201-IDC ~]$
+python --version
+which python
+sudo netstat -ntpl
+cd /home/akhilj/
+curl -O https://www.python.org/ftp/python/3.9.6/Python-3.9.6.tgz —> Change Version on requirement
+ls -lrth
+sudo tar -xzf Python-3.9.6.tgz
+ls -lrth
+cd Python-3.9.6
+ls -lrth
+pwd
+ls -lrth
+sudo ./configure --enable-optimizations
+sudo make altinstall
+python3 --version
+python3.9 --version
+sudo ln -s /usr/local/bin/python3.9 /usr/bin/python3.9
+sudo ln -s /usr/local/bin/pip3.9 /usr/bin/pip3.9
+sudo /usr/local/bin/python3.9 -m pip install --upgrade pip
