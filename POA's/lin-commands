@@ -1,0 +1,1606 @@
+ssh -p 4422 ldapauth-master.jdintra.com\\saiprasad-10101286+saiprasad-10101286+17-198-IDC@192.168.27.23
+
+d3V0psJu5D1@lAdM1n
+
+sudo sh /scripts/mysql_audit_flush-logs.sh
+
+B@l_n0_5tD4@lcr9mS*
+
+ju5tD1@lcr0mA
+d3V0psJu5D1#lAdM1n
+saiprasad-10101286
+d3V0psJu5D1#lAdM1n
+
+Adding para in my.cnf
+
+sai_ju_5tD1@lcr0mA*
+
+vai_su_5tD1@lcr0mA*
+
+SET GLOBAL innodb_flush_log_at_trx_commit=1;SET GLOBAL sync_binlog=1;
+
+/home/justdial/All_immp/server-setup
+
+C17h35coona@#
+roopesh-10018300
+
+Needful has been done kindly check and close before go-live date
+#############################################################################################
+                                TO GREP DATABASE SIZE
+SELECT table_schema,table_name,ROUND((data_length+index_length)/(1024*1024*1024),2) "Size_in_GB", CREATE_TIME,UPDATE_TIME FROM information_schema.`TABLES` WHERE table_schema ='db_shares_processing' AND ENGINE='Innodb' ORDER BY Size_in_GB DESC; 
+
+##############################################################################################
+Username - 10101286
+
+Password - 7V$UKJ&s
+
+##############################################################################################
+TO CHECK LB UP PORT DETAILS
+curl "http://192.168.13.102:920/lb_module-cli?ip=12.24" | grep 192.168.12.24 | grep up
+###############################################################################################
+
+LINE="###############################################################################################################";sudo cat /proc/sys/kernel/hostname > /root/details_`date +%d%b%Y` ; sudo echo $LINE >> /root/details_`date +%d%b%Y` ; sudo /sbin/ifconfig -a >> /root/details_`date +%d%b%Y` ; sudo echo $LINE >> /root/details_`date +%d%b%Y`;sudo cat /proc/net/bonding/bond0 >> /root/details_`date +%d%b%Y`;sudo echo $LINE >> /root/details_`date +%d%b%Y` ;sudo  dmidecode -t system >> /root/details_`date +%d%b%Y` ; sudo echo $LINE >> /root/details_`date +%d%b%Y` ; sudo df -h >> /root/details_`date +%d%b%Y` ; sudo echo $LINE >> /root/details_`date +%d%b%Y` ; sudo free -g >> /root/details_`date +%d%b%Y` ;sudo  echo $LINE >> /root/details_`date +%d%b%Y` ;sudo  netstat -ntlp >> /root/details_`date +%d%b%Y` ;sudo  echo $LINE >> /root/details_`date +%d%b%Y` ; DOCK_CONT=`sudo docker ps -q`; for i in $DOCK_CONT; do echo "docker ports : " >> /root/details_`date +%d%b%Y`; sudo docker port $i >> /root/details_`date +%d%b%Y`; done; sudo  echo $LINE >> /root/details_`date +%d%b%Y` ; screen -ls >> /root/details_`date +%d%b%Y` ; sudo echo $LINE >> /root/details_`date +%d%b%Y` ; sudo multipath -ll >> /root/details_`date +%d%b%Y` ;sudo echo $LINE >> /root/details_`date +%d%b%Y` ;cat /sys/class/fc_host/*/port_name >> /root/details_`date +%d%b%Y`;  sudo echo $LINE >> /root/details_`date +%d%b%Y` ;sudo cat /etc/fstab >> /root/details_`date +%d%b%Y` ;sudo  echo $LINE >> /root/details_`date +%d%b%Y` ; sudo mysqld_multi report >> /root/details_`date +%d%b%Y` ;sudo  echo $LINE >> /root/details_`date +%d%b%Y` ; sudo ps auxf >> /root/details_`date +%d%b%Y` ;sudo  echo $LINE >> /root/details_`date +%d%b%Y` ;sudo mount >> /root/details_`date +%d%b%Y` ; echo "history from root before activity" >> /root/details_history_`date +%d%b%Y`; sudo echo $LINE >> /root/details_history_`date +%d%b%Y`;
+###############################################################################################################
+
+filebeat-mobileapi
+filebeat-8.8
+sudo mv /var/www/production/website_services/LoadBalancer_HealthCheck_Varnish.php /var/www/production/website_services/LoadBalancer_HealthCheck_Varnish.php_OOP && sudo mv /var/www/production/website_services/LoadBalancer_HealthCheck.php /var/www/production/website_services/LoadBalancer_HealthCheck.php_OOP
+
+sudo systemctl status nginx php-fpm docker redis varnish crond
+
+################################################################################################################
+
+  sudo locate LoadBalancer_HealthCheck.php LoadBalancer_HealthCheck.txt 
+  sudo locate LoadBalancer_HealthCheck.php LoadBalancer_HealthCheck.txt  | egrep -v "ldaphome|scripts|tmp"
+  sudo locate LoadBalancer_HealthCheck.php LoadBalancer_HealthCheck.txt  | egrep -v "ldaphome|scripts|tmp|OOP|BKP" > lb_details
+  sudo locate LoadBalancer_HealthCheck.php LoadBalancer_HealthCheck.txt  | egrep -v "ldaphome|scripts|tmp|OOP|BKP" 
+  sudo locate LoadBalancer_HealthCheck.php LoadBalancer_HealthCheck.txt  | egrep -v -i "ldaphome|scripts|tmp|OOP|BKP" 
+  sudo locate LoadBalancer_HealthCheck.php LoadBalancer_HealthCheck.txt  | egrep -v -i "ldaphome|scripts|tmp|OOP|BKP|docker" 
+  sudo locate LoadBalancer_HealthCheck.php LoadBalancer_HealthCheck.txt  | egrep -v -i "ldaphome|home|scripts|tmp|OOP|BKP|docker" 
+   
+  for i in `cat lb_details_before_activity.txt`; do sudo ls -lrth $i ; done 
+  #for i in `cat lb_details_before_activity.txt`; do sudo mv ${i} ${i}_060325  ; done 
+  for i in `cat lb_details_before_activity.txt`; do sudo ls -lrth ${i} ${i}_060325  ; done (for check)
+  #for i in `cat lb_details_before_activity.txt`; do sudo mv ${i}_060325 ${i} ; done  (for revert the OOP files)
+  ###############################################################################################################
+  Take details with line commnd 
+  Take details of all UP-port in lb
+  cd /var/www/production
+   sudo locate LoadBalancer_HealthCheck.php LoadBalancer_HealthCheck.txt  | egrep -v -i "ldaphome|home|scripts|tmp|OOP|BKP|docker"
+  sudo locate LoadBalancer_HealthCheck.php LoadBalancer_HealthCheck.txt  | egrep -v -i "ldaphome|home|scripts|tmp|OOP|BKP|docker" > lb_details_before_activity.txt
+  for i in `cat lb_details_before_activity.txt`; do sudo ls -lrth $i ; done 
+  #for i in `cat lb_details_before_activity.txt`; do sudo mv ${i} ${i}_060425  ; done 
+  for i in `cat lb_details_before_activity.txt`; do sudo ls -lrth ${i} ${i}_220225  ; done (for check)
+  #for i in `cat lb_details_before_activity.txt`; do sudo mv ${i}_060425 ${i} ; done  (for revert the OOP files)
+  su noderun 
+  pm2 ls
+  pm2 save 
+  pm2 stop all
+  su noderun_vendor
+  pm2 ls 
+  pm2 save 
+  pm2 stop all
+  sudo docker stop continer NAMEll
+  File: /etc/sysconfig/selinux
+  Change line : "SELINUX=disabled" => "SELINUX=permissive"
+  sudo reboot
+  sudo systemctl status nginx_exporte
+  sudo systemctl status nginx php-fpm redis crond docker
+  sudo systemctl stop nginx php-fpm redis crond docker
+  sudo systemctl start nginx_exporte
+  sudo systemctl start nginx php-fpm redis crond docker
+  sudo docker start continer NAME
+  su noderun_vendor
+  pm2 resurrect
+  su noderun
+  pm2 resurrect 
+  #for i in `cat lb_details_before_activity.txt`; do sudo mv ${i}_220225 ${i} ; done  (for revert the OOP files)
+
+################################################################################################################
+zcat sales_python_api.access.log-202411090015.gz | grep -i  'HTTP/1.1" 4..' > /ldaphome/saiprasad-10101286/python_error.txt
+
+###############################################################################################################
+                                          FLUSH COMMAND FOR SLAVE
+mysql -e "show slave status\G" && mysqladmin flush-tables && mysqladmin flush-tables &&  mysqladmin flush-tables  && mysql -e "stop slave;" && mysql -e "show slave status\G" > /ldaphome/saiprasad-10101286/mysql.txt && service mysqld stop
+###############################################################################################################
+                                            SLAVE RESET COMMAND
+stop slave;reset slave;CHANGE MASTER TO MASTER_HOST='192.168.35.124',MASTER_USER='repl', MASTER_PASSWORD='password', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=120;start slave;
+###############################################################################################################
+
+                                           FLUSH COMMAND FOR MASTER
+mysql -e "show master status\G" && mysqladmin flush-tables && mysqladmin flush-tables &&  mysqladmin flush-tables  && mysql -e "show master status\G" > /home/rajveer/mysql.txt && service mysqld stop                                                                                    
+###############################################################################################################                                          
+                                       TO take logs for 30 mins
+ 
+sed -n '/2022-08-02T11:14:00/,/2022-08-02T11:46:00/p' /var/log/mongodb/mongod.log > /home/saiprasad/mongod020822.txt
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+                                   Firewall command to add port
+
+sudo firewall-cmd --zone=public --permanent --add-port=PORT/tcp
+sudo firewall-cmd --reload
+
+############################################################################################################## 
+    to change hostname 
+
+ hostnamectl set-hostname 24-81-IDC.justdial.com --static
+ hostnamectl set-hostname 24-81-IDC.justdial.com --pretty
+ hostnamectl set-hostname 24-81-IDC.justdial.com --transient
+
+ hostnamectl set-hostname 12-24-IDC.justdial.com  --static
+ hostnamectl set-hostname 12-24-IDC.justdial.com  --pretty
+ hostnamectl set-hostname 12-24-IDC.justdial.com  --transient
+
+ hostnamectl set-hostname 39-82-OLD-IDC.justdial.com  --static
+
+##############################################################################################################
+                                       screen commands
+Screen -ls 
+Screen -S session_name
+Screen -R session-id
+Ctrl +a and ctrl + d to deattach from session
+Screen -XS session I'd quit( to quit screen )
+
+for i in 35 39 43 44 45 46 47 48 17; do cssh saiprasad-10101286@192.168.${i}.171; done
+
+###############################################################################################################
+                                      FOR LOOP TO TABLE TRANSFER
+
+for i in cat table.txt; do echo " unzipping $i"; sudo gunzip -fv $i.sql.gz; echo " restoring $i.sql"; sudo mysql justdial < $i.sql; echo "zipping $i.sql"; sudo gzip -fv $i.sql; done
+
+for i in cat table.txt;do  echo $i ;sudo  mysqldump justdial $i | gzip -fv > $i.sql.gz;done
+
+for i in `cat tbl.txt`; do echo $i; sudo mysqldump company_mapping $i | gzip -fv > $i.sql.gz; done
+
+for i in `cat tbl.txt`; do echo $i; done ##" unzipping $i"; sudo gunzip -fv $i.sql.gz; echo " restoring $i.sql"; mysql db_projection < $i.sql; echo "zipping $i.sql"; sudo gzip -fv $i.sql; done
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
+                          copy command for files and folder
+ 
+   rsync -avrpP {source and destination}
+   scp -r {source and  destination} 
+   (Reverse copy of /sripts/sysmon.sh) to web_backup@172.29.86.26
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+                          ALL USER GRANTS ACESS ON DATABASES;
+
+@@ to find host adn user by linux terminal
+##sudo mysql -e "select user, host from mysql.user where host like '%64.64%';"
+##sudo mysql -e "select user, host from mysql.user where user like 'roopesh';"
+
+
+ # read only access :
+If user require only read only access use below command to provide access.
+
+GRANT SELECT ON database_name.table_name TO 'username'@'localhost' IDENTIFIED BY 'password';
+
+   # read / write : 
+If user want tA	o write some changes in database user require update & insert access.
+
+GRANT SELECT,INSERT,PROCESS,UPDATE ON database_name.table_name TO 'username'@'localhost' IDENTIFIED BY 'password';
+
+   # read / write / delete :
+If user want read, write & delete access of table use below command.
+
+GRANT SELECT,INSERT,UPDATE,PROCESS,DELETE ON database_name.table_name TO 'username'@'localhost' IDENTIFIED BY 'password';
+
+   # read / write / delete / execute :
+If user want access to execute existing SP use below command.
+
+GRANT SELECT,INSERT,UPDATE,DELETE,PROCESS,EXECUTE ON database_name.table_name TO 'username'@'localhost' IDENTIFIED BY 'password';
+
+Note : In above case user can only execute sp. To check / read SP you need to give access of mysql.proc table Or you must have the ALTER ROUTINE privilege for that particular procedure.
+
+GRANT SELECT ON mysql.proc TO 'username'@'IP' IDENTIFIED BY 'password';
+
+  # Delete SP :
+You must require ALTER ROUTINE privileges for that particular procedure.
+
+GRANT ALTER ROUTINE ON databasename.spname TO 'username'@'localhost' IDENTIFIED BY 'password';
+
+  # Infile Outfile Access :
+You can not provide infile / outfile access for single database.
+
+  Grant file on *.* TO 'Username'@'IP' IDENTIFIED BY 'PASSWORD';flush privileges;
+
+ # Grant all access :
+GRANT CREATE,DROP,LOCK TABLES,REFERENCES,EVENT,ALTER,DELETE,INDEX,INSERT,SELECT,UPDATE,CREATE TEMPORARY TABLES,TRIGGER,CREATE VIEW,SHOW VIEW,ALTER ROUTINE,PROCESS,CREATE ROUTINE,EXECUTE ON Database_name.* TO 'Username'@'IP' IDENTIFIED BY 'PASSWORD';flush privileges;
+
+
+
+^^^^^^^^^^^^^^^TABLE TRANSFER COMMANDS^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     Table Transfer	
+Login
+
+df -hT   ( to check space)
+
+Take dump-
+sudo mysqldump database_name table_name > table_name.sql
+ll -lrth
+scp table_name.sql Username@destination_ip:
+password
+
+
+login to destination server
+
+Restored table-
+sudo mysql database_name < table_name.sql
+sudo mysql (--socket=/var/lib/SQL/mysql/mysql.sock) database_name < table_name  --- if socket is given)
+
+Check count
+sudo - mysql ( Socket) if socket is given
+mysql> select count(1) from database_name.table_name
+
+select count(1) from db_finance.tbl_cat_pin_quartile
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                             List all Network Interfaces
+                               ip a s
+!!!!!!!!!!!!!!!!!!!!!!!
+Temporary IP Address setting using ip command
+root@lco-linux-master:~# ip a s | grep eth1
+root@lco-linux-master:~# ip addr add 172.62.62.200/24 dev eth1
+root@lco-linux-master:~# ip a s | grep eth1
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Deletion of an IP Address using ip command
+root@lco-linux-master:~# ip a s | grep eth1
+root@lco-linux-master:~# ip addr del 172.62.62.200/24 dev eth1
+root@lco-linux-master:~# ip a s | grep eth1
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Configure a default gateway using ip command
+root@lco-linux-master:~# ip route show
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 
+                              Find logs for perticular dates by using awk command
+
+awk '/(Mar 14 09:43:32|Mar 14 09:43:50)/ { print; }' syslog
+
+awk '/(error|fail)/ { print; getline; print; }' syslog.log
+
+awk '/(error|fail)/ { print; }' syslog.log
+
+who | awk 'BEGIN {print "Active Sessions"} {print $1,$4}'
+
+cat accounts.justdial.com.access.log | awk '/2022:14:30:00/,/2022:14:36:00/' > /tmp/16.34_accesslog.txt
+###########################################################################################################
+MYSQL FOR LOOP WITH LS
+for i in `ls *.sql`; do echo "RESTORING $i .............."; sudo mysql test < $i; echo "$i Restoration completed.............."; done
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ ;;;;;;;;;;;;;;;;;;USERS IN MYSQL-8;;;;;;;;
+
+mysql> CREATE USER 'rahul'@'localhost' IDENTIFIED BY 'password';
+
+mysql> GRANT ALL ON mydb.* TO 'rahul'@'localhost';
+
+mysql> GRANT ALL ON *.* TO 'rahul'@'localhost';
+
+mysql> FLUSH PRIVILEGES; 
+ 
+Create MySQL User Remote Accessible
+
+mysql> CREATE USER 'rahul'@'123.45.67.89' IDENTIFIED BY 'password';
+mysql> CREATE USER 'rahul'@'%' IDENTIFIED BY 'password';
+mysql> FLUSH PRIVILEGES; 
+
+ Grant Specific User Permissions in MySQL
+
+mysql> GRANT CREATE,DELETE,INSERT,UPDATE ON mydb.* TO 'rahul'@'localhost';
+mysql> FLUSH PRIVILEGES; 
+
+ Revoke User Permissions in MySQL
+
+mysql> REVOKE DELETE ON mydb.* TO 'rahul'@'localhost';
+mysql> FLUSH PRIVILEGES; 
+
+Drop User in MySQL
+
+mysql> DROP USER 'rahul'@'localhost';
+mysql> FLUSH PRIVILEGES; 
+================================================================================================================
+TO FIND OWN network interface name
+
+sudo ip a | grep wl
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+            command to transfer multiple user from txt file(Roopesh Sir)ratand
+  
+for i in `cat test_user`; do echo "processing for $i" && rsync -avrpP /test/home/${i}/sandbox/ /home/$i/sandbox/ && echo "Sync completed for $i" done ;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                       HARDANING STEPS
+
+vi /etc/resolv.conf
+nameserver 192.168.1.3
+
+ping www.google.com
+
+yum install vim net-tools wget sysstat stat device-mapper-multipath* vsftpd lftp psmisc yum-utils
+yum install wget net-tools
+
+
+systemctl status NetworkManager
+systemctl disable NetworkManager
+systemctl stop NetworkManager
+systemctl status NetworkManager
+
+
+wget http://172.29.0.123/download/Centos7_configure.sh
+
+chmod +x Centos7_configure.sh
+
+ping www.google.com
+
+./Centos7_configure.sh
+
+
+yum update
+
+dmidecode -t 1
+##############
+#reboot
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                              HOW TO CREATE USER AND GRANT ACCESS TO USER IN MONGO DB.
+                                  
+                                      TO CREATE USER FOR REMOTE ACESS ON MONGO
+db.createUser({user: "prashanth", pwd: "prashanth123", roles: [ "readWriteAnyDatabase" ], authenticationRestrictions:[{ clientSource: ["172.29.87.227"]}]})
+
+
+1. Connect to Mongo
+
+Command:
+mongo --host <Server-IP> --username <User-name> --password <Password> --authenticationDatabase <Authentication Database>
+
+Example:
+mongo --host 192.168.39.20 --username vishwa --password vishwa@123 --authenticationDatabase admin
+
+2. List Databases
+
+Command:
+show dbs
+
+3. Enter database or Create database
+
+Command:
+use <database-Name> (If database is not there it will be created)
+
+Example:
+use vishwa
+
+4. List collections (tables) in database
+
+Command:
+use <database-Name>
+show collections or show tables
+
+5. To confirm data is present in a table (After going inside database with "use" command)
+
+Command:
+db.<table-Name>.find().pretty().limit(1)
+
+Example:
+db.vishwa.find().pretty().limit(1)
+
+6. To See total count of data inside mongo collection.
+
+Command:
+db.<Table-Name>.count()
+
+Example:
+db.vishwa.count()
+
+7. To List All the Users
+
+Command:
+db.getUsers()
+
+8. To List particular user
+
+Command:
+db.getUser('<User-Name>')
+
+9. To List particular User with Restrictions
+
+Command:
+db.getUser( "<User-Name>", { showAuthenticationRestrictions: true} )
+
+10. To Create User
+
+i. Create User With Inbuilt Access (Accessible from All IPs)
+
+
+Command:
+db.createUser({user: "<User-Name>", pwd: "<Password>", roles: [ "<Access-Type>" ]})
+Example:
+db.createUser({user: "vishwa", pwd: "c0mp_ap!", roles: [ "readWriteAnyDatabase" ]})
+
+ii. Create User with access on Particular Databases (Accessible from All IPs)
+
+Command:
+db.createUser({user: "<User-Name>", pwd: "<Password>", roles:[{role: "<AccessType>", db: "<Database-Name>"}]})
+
+Example:
+Single Database
+===============
+db.createUser({user: "vishwa", pwd: "vishwa", roles: [ { role: "readWrite", db: "db_refer_earn" } ]
+
+Multiple Database
+=================
+db.createUser(
+{
+user: "vishwa",
+pwd: "vishwa",
+roles: [
+{ role: "read", db: "reporting" },
+{ role: "read", db: "products" },
+{ role: "read", db: "sales" },
+{ role: "readWrite", db: "accounts" }
+]
+}
+)
+
+iii. Create User With Access From limtited Servers (Accessible only from servers mentioned in Client Source)
+
+Command:
+db.createUser({user: "<User Name>", pwd: "<Password>", roles: [ "readWriteAnyDatabase" ], authenticationRestrictions:[{ clientSource: ["<ip1>","<ip2>","<ip3>",.....,"<ipn>"]}]})
+
+Example:
+db.createUser({user: "vishwa", pwd: "vishwa123", roles: [ "readWriteAnyDatabase" ], authenticationRestrictions:[{ clientSource: ["192.168.39.71","192.168.39.72","192.168.17.222","192.168.17.223"]}]})
+
+11. Update Users
+Note: Updating User in Mongo is an update process i.e New data over-writes old data,
+therefore, Addition and deletion of particular access should be updated with all the access required and not just the data to be updated
+
+Command:
+
+db.updateUser( "<User-Name>",
+{
+
+roles : [
+{ role : "<Access-Type>", db : "<Databases>" }
+],
+authenticationRestrictions: [
+{ clientSource: ["<ip1>","<ip2>","<ip3>",.....,"<ipn>"] }
+]
+
+} )
+
+Example:
+
+A User Created with Below commnds
+db.createUser({user: "vishwa", pwd: "c0mp_ap!", roles: [ "readWriteAnyDatabase" ], authenticationRestrictions:[{ clientSource: ["192.168.39.71","192.168.39.72","192.168.17.222","192.168.17.223"]}]})
+
+If Now we have to give access to 192.168.13.138 also then Run below Command
+
+db.updateUser( "vishwa",
+{
+
+roles : [
+{ role : "readAnyDatabase", db : "admin" }
+],
+authenticationRestrictions: [
+{ clientSource: ["192.168.39.71","192.168.39.72","192.168.17.222","192.168.17.223","192.168.13.138"] }
+]
+
+} )
+
+12. Update User Password
+
+Command:
+db.changeUserPassword("<Username>", "<New-Password>")
+
+Example:
+db.changeUserPassword("vishwa", "vishwa123")
+
+13. Delete User
+
+Command:
+db.dropUser("<User-Name>")
+
+Example:
+db.dropUser("vishwa")
+
+14. Execute mongo Commands from linux bash terminal
+
+Command:
+mongo --host <Server-IP> --username <User-name> --password <Password> --authenticationDatabase <Authentication Database> --eval "printjson(<mongo-command>)"
+
+Example:
+mongo --host 192.168.39.20 --username vishwa --password vishwa@123 --authenticationDatabase admin --eval "printjson(db.serverStatus())"
+
+mongo --quiet --host 192.168.39.20 --username vishwa --password vishwa@123 --authenticationDatabase admin --eval "printjson(db.getMongo().getDBNames())"
+
+######################################################################################################################################################################
+
+ Need access log of "mvc/services/web_services/leads/set” request
+> Server:-35.227/228/229/222/223, 11.227, 17.227
+
+command 
+
+zcat jds_pincodewise.access.log-20220523* | grep -i  'mvc/services/web_services/leads/set' >> /home/pankaj/pravin_access_17.227_log_23.log
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+                                                                   ADD NAGIOS CHECK..
+step1 
+42.172
+copy nrpe.cfg , nrpe,  plugins
+
+source server
+scp -r /etc/nagios/nrpe.cfg /etc/xinetd.d/nrpe /usr/lib64/nagios/plugins user@ip:
+
+destination
+ 42.173
+cp nrpe.cfg /etc/nagios/ 
+cp nrpe /etc/xinetd.d/
+cp plugins /usr/lib64/nagios/ 
+
+step 2
+
+nagios sevrer
+
+/etc/nagios/objects
+
+cp 192.168.42.172.cfg 192.168.42.173.cfg
+
+flight check
+
+nagios -v /etc/nagios/nagios.cfg 
+
+service nagios reload
+
+#####################@@@@@@@@@@@@@@@@@@@@###################################
+HOW TO GATE FULL PROCESS LIST LOGS
+
+LOGIN ON TARGETED SERVER
+
+cd /opt/sysmon
+
+cd (Date for the process list logs)
+
+ls -lrth (date)09-{45..59}.processlist_full
+
+scp 09-{45..59}.processlist_full saiprasad@172.29.87.36:
+
+#######################@@@@@@@@@@@@@@@@@@@@@@@@@@@@############################
+#					#
+#		hardning of server	#
+
+To do hardning
+
+*Login to root
+ssh root@xxxxxxx
+pssword - justdial
+
+*		check OS version 
+cat /etc/redhat -relese
+
+*		Check internet is working or not
+
+ping www.google.com
+
+*    		If internet is not working
+cat or vim /etc/resolve.cfg  (Mention name server IP from other server)
+Esc:wq
+
+*Go to 172.29.0.123/download
+Select Corrosponding OS version
+Copy link  and install to harding server
+
+* 		Download the Script
+wget sh
+(If wget is not install, than download wget by yum)
+
+* 			If OS version is Centos 7
+
+systemctl status NetworkManager
+systemctl stop NetworkManager
+systemctl disable NetworkManager
+
+ll -lrth
+
+* 		Give permissionto the script
+
+chmod +x xxxxxxxxx.sh
+
+*		Execute Script file
+
+./ or sh   wget -O /tmp/root_password_reset.sh http://172.29.0.123/download/INVENTORY/root_password_reset.sh && sh /tmp/root_password_reset.sh
+
+
+*   Select 1 for basic confg.
+
+
+* when we get sheros option ------- press N
+In the end we will get one .sh file (wget*******)
+copy that file and run that file after server come up
+
+* yum updtae
+
+*		 Reboot the server
+reboot
+
+after server come up 
+
+login with same name
+sudo -i
+run wget *****.sh
+
+#####################################
+ bonding of server
+#####################################
+
+login to server
+
+* ifconfig -a (check all nic cards)
+
+*check each interface details using ethtool
+eg- ethtool enp3s0f0 (xxxxxxx)
+
+check speed-10000MB/s
+link detected should be -yes
+if speed is showing and then link is not detected then ifup interface name
+
+* then run to script
+eg Centos7_configure.sh
+
+in that step 5(NIC/bonding)
+
+and give interface name  which are running on 10000 speed
+interface name0 (name0 = default nic_card_name )
+interface name1 (name1 = default nic_card_name )
+
+
+* check failover by viewing file {be sure both cards should not be down and if more packet drop or latency come inform to system team}
+
+cat /proc/net/bonding/bond0
+
+ping server and see if any packet drop or latency come or not
+
+ifdown interface_name0
+
+cat /proc/net/bonding/bond0
+
+ifup interface_name0
+
+cat /proc/net/bonding/bond0
+ 
+ifdown interface_name1
+
+ifup interface_name1
+
+###########################################################################################################################
+Reset rrot password in mysql 8
+check root password and take login in mysql
+1) ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';
+2) take new session and take login with new password
+- UNINSTALL COMPONENT 'file://component_validate_password';
+- UPDATE mysql.user SET authentication_string='' WHERE User='root';
+- FLUSH PRIVILEGES;
+- INSTALL COMPONENT 'file://component_validate_password';
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Activity for any mysql Upgradation
+
+There are 2 ports to be upgraded 3306 and 3311 upgrade one after other 
+
+step 1
+first check the  processlist of 3306 
+first do stop slave on all slaves
+take  master position and stop 3306 grancefully
+
+step 2
+Stop mysql gracefully on server 
+take the backup of my.cnf  -----> copy /etc/my.cnf to /etc/my.cnf_date
+
+
+
+step 3 
+ then remove the  rpms of 5.6 and install rpms of 5.7
+
+step 4
+start port 3306 with 
+#mysqld_multi start 1 
+and after that do : mysql_upgrade -P 3306 > /tmp/mysqlupgrade_3306.log
+if there is any issue refer step 5
+
+step 5 
+
+if there is any issue for table structure eg : innodb_index_stats, innodb_table_stats, slave_master_info, slave_relay_log_info slave_worker_info
+
+Stop mysql 
+
+then go that directory cd /var/lib/SQL/mysql/mysql/innodb_table_stat
+mv that table to your home and login to mysql shell and start mysql for that port and login to mysql shell create new table structure use below link for creating table structure  
+
+Follow this link and create table structure:
+
+https://dba.stackexchange.com/questions/54608/innodb-error-table-mysql-innodb-table-stats-not-found-after-upgrade-to-mys
+
+after that still issue is there for creating table structure for below tables:
+
+mv both files from your home to /var/lib/SQL/mysql/mysql/* innodb_index_stats, innodb_table_stats .frm and .ibd files and restart mysql.
+
+step 6
+then again run mysqld_upgrade -P 3306 if previously it was not executed properly
+
+
+step 7 
+once upgrade is successful , connect that slave to its master
+if gets issue while connecting to slave, kinldy reset slave with same position
+
+
+AND repeat the steps for port 3311 also
+
+
+
+mysql_upgrade -P 3311 --socket=/var/lib/SQL_3311/mysql/mysql_3311.sock > /tmp/mysqlupgrade_3311.log
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+TO KILL MULTIPLE PROCESS INSIDE MYSQL
+for i in $(mysql -Bse "show  processlist" | grep  "tbl_contract_fetch_history" | awk '{print $1}') ;do mysql -e "kill $i;";done
+
+TO KILL PROCESS FROM LINUX TERMINAL
+ps -auxxwwff | grep -i "tbl_contract_fetch_history" | awk '{print $2}' | xargs kill -9
+#####################################################################################################
+zcat /var/log/nginx/category_api.access.log-202302270730.gz | grep  'HTTP/1.." 400' | awk -F '?' '{print $1}' | awk -F 'HTTP/1.1"' '{print $1}' | awk -F '"GET' '{print $2}'  | sort  | uniq -c 
+
+######################################################################################################
+COMMAND TO DELET LOGS 
+cd /var/log/nginx
+find . -type f -mtime +30 -exec rm -fv {} \;
+##################################################################################################
+FOR LOOP FOR TABLE RESTORATION.
+for i in `ls -1`;do echo $i; mysql database_name < $i; done
+#############################################################################################
+                         Command to update Docker Repo
+scp web_backup@192.168.24.250:/opt/dockerfiles/registry/certs/registry.crt /etc/docker/certs.d/registry.justdial.com:5000/
+############################################################################################
+                        Slave reset command 
+stop slave;reset slave;CHANGE MASTER TO MASTER_HOST='192.168.39.55',MASTER_PORT=3306,MASTER_USER ='repl',MASTER_PASSWORD ='password',MASTER_AUTO_POSITION=1;start slave;
+######################################################################################
+[root@13-105-IDC mobileapi001]# cd /var/log/container_logs/nginx/mobileapi001
+find . -type f -mtime +30 -exec rm -fv {} \;
+###########################################################################################
+TO DIRECT ENT
+echo "192.168.40.172 avinashadit.blrsoftware.jd" >>  /etc/hosts
+##########################################################################################
+                                ELASTICSEARCH
+  curl -s -X GET '192.168.39.117:9200/_all/_settings?pretty' | tee /home/saiprasad/settings$(date +%y%m%d%H%M%S).json
+
+curl -X PUT "192.168.39.117:9200/_all/_settings?pretty" -H 'Content-Type: application/json' -d' { "settings":
+{ "index.unassigned.node_left.delayed_timeout": "1200m" }
+}'
+
+
+curl -X PUT "192.168.39.117:9200/_all/_settings?pretty" -H 'Content-Type: application/json' -d' { "settings":
+{ "index.unassigned.node_left.delayed_timeout": "10m" }
+}'
+
+
+curl -X PUT "192.168.39.117:9200/_all/_settings?pretty" -H 'Content-Type: application/json' -d' { "settings":
+{ "index.unassigned.node_left.delayed_timeout": "100m" }
+}'
+######################################################################################################################                              
+
+ ###curl indices ####
+
+curl -XPOST http:///index_name/_close
+
+curl -XPOST http:///recipe_de_2021-1-08/_close
+
+curl -X DELETE /recipe_ar_2021-1-08 
+
+curl -XGET "http:///recipe_en/_search?pretty=true" -H 'Content-Type: application/json' -d'{  "query": {    "match": {      "similarity.fid": "8"    }  },"_source":["fid","title","similarity"],"size":1}'
+
+curl http:///recipe_en/_count
+
+curl -XDELETE 'http:///kgs_credit_card_index_v8/ccdata/sg_1_'
+
+curl -XPOST "http:///_aliases" -H 'Content-Type: application/json' -d'{  "actions" : [    { "remove" : { "index" : "recipe_en_2021-1-08", "alias" : "recipe_en" } }  ]}'
+
+##### Curl qu check ####
+cinema TR
+curl -XPOST 'http:///qu' -H 'Content-Type: application/json' -d '{"query": "Yelmo Cines Area Sur", "srcid": "2701"}'
+
+coversion TR
+curl -XPOST 'http:///qu-tr' -H ‘Content-Type:application/json’ -d '{"query": "1 kw kaç hp", "srcid": '1437'}'
+
+
+poetry
+curl -XPOST http:///qu   -H 'Content-Type: application/json' -d '{"query": "李白的诗","srcid": "1301"}' 
+
+recipe
+curl -XPOST 'http:///qu-tr' -H ‘Content-Type:application/json’ -d '{"query": "receta de tacos", "srcid": '1354'}'
+
+###########################hardware################
+
+lsscsi -g
+
+smarctl -a /dev/sdc
+
+
+##### process check #####
+
+ps -ef | grep python
+
+lsof -i:9200
+
+netstat -anp | grep LISTEN
+
+netstat -anp | grep CLOSE_WAIT
+
+
+#### find ####
+
+find ./ -type f -name filename
+
+
+######  SLB 502 ######
+
+grep srv_wego_com access.log
+ 
+######## hadoop ######## 
+
+yarn application -list | grep sead_kafka  
+
+
+hadoop fs -ls /tmp/flinkengine-checkpoint/1000090052 
+
+
+hadoop fs -chmod 777 /tmp/flinkengine-checkpoint/1000090052/*
+
+hadoop fs -chmod -R 777 /tmp/flinkengine-checkpoint/1000090052/*
+
+
+###### CURLS #######
+
+curl -XGET http:///_cat/shards
+
+curl -XGET http:///_cat/shards?h=shard,state,unassign*&v
+
+curl -XGET http:///_cluster/allocation/explain
+
+curl -XGET http:///_cat/health?v
+
+curl -XGET http:///_cat/shards
+
+curl -XGET http:///_cat/indices
+
+curl -XGET http:///_cat/nodes
+
+curl -XGET http:///_cat/nodes | wc -l
+
+curl -XGET http:///_cat/nodes?v
+
+curl -XGET http:///_cat/nodes | grep mi
+
+########  we delete memory leak cache memory  #############
+
+curl -X DELETE http:///_cache_management/free
+
+############  try to re-allocate the unassigned shards  #########
+
+curl -XPOST http://192.168.41.120:9200/_cluster/reroute?retry_failed=true
+
+############## search query ################
+curl -XGET http:///_search?pretty -d '{"query":{"match_all":{}}}' -H 'Content-Type:application/json'
+
+###### to create aliases manually #####
+
+curl -s -XPOST -H "Content-Type:application/json" http://ip:port/indexe name/_alias/name alias
+
+curl -s -XPOST -H "Content-Type:application/json" http:///indexer-newssnippet_20211215/_alias/indexer-newssnippet
+
+
+############################ if index failed reindex the indices ######################################
+
+curl -s -X GET "192.168.38.50:9200/_cat/indices?pretty" | awk '{print $3}' | egrep -v ".elastichq" | xargs | sed -e 's/ /,/g'  -- to get the indices details.
+
+
+curl -XGET 192.168.38.60:9200/tbl_categorymaster_localinfo_w_20230103?pretty  --- veification 
+
+38.50 --- elastic_restore_failed_UNASSIGNED_index_from_backup_manual.sh  --- edit till failed index 
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+F5 read only user details :
+
+Username : justdial
+
+Password : Justd!aldev0psadmin
+
+F5 admin user details:
+
+Username: devops
+
+Password : d3V0psJu5D1@lAdM1n
+
+
+F5 read only user details :
+
+Username : justdial
+
+Password : Justd!aldev0psadmin
+
+F5 admin user details:
+
+Username: devops
+
+Password : d3V0psJu5D1@lAdM1n
+
+
+##For arping
+F5 admin user details:
+
+Username: urvesh
+
+Password : dwN}n7yA@c@H44ks    
+########################################################################################################
+                                      KIBANA SEARCH QUERY     
+
+request_duration:[5 TO *]
+
+request_duration:>5
+
+
+request_duration:>5 AND request:"test=0"
+
+
+response:[500 TO 504] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request:"JdSocial" AND !request:"jdpay2" AND !request_header_agent:"Googlebot" AND !request:"list" AND !request:"real-estate" AND !request:"api" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND  !request_header_agent:"Applebot"
+
+
+response:[500 TO 504] 
+
+response:[400 TO 409]
+
+response:[400 TO 499] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request:"JdSocial" AND !request:"jdpay2" AND !request_header_agent:"Googlebot" AND !request:"list" AND !request:"real-estate" AND !request:"api" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND  !request_header_agent:"Applebot"
+
+4xx www user
+response:[400 TO 499] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"api" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"/list" And !request:"JdSocial" AND !request:"jdpay2" AND !request:"_next"
+
+5XX ww user
+response:[500 TO 504] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"api" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"/list" And !request:"JdSocial" AND !request:"jdpay2" AND !request:"_next"
+
+4xx www gbot
+response:[400 TO 499] AND request_header_agent: ("AdsBot-Google" OR "Googlebot")
+5xx www gbot
+response:[500 TO 504] AND request_header_agent: ("AdsBot-Google" OR "Googlebot")
+
+4xx touch user
+response:[400 TO 499] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"api" AND !request:"response.txt" AND !request_header_agent:"GoogleOther"
+
+5xx touch user
+response:[500 TO 504] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"api" AND !request:"response.txt" AND !request_header_agent:"GoogleOther"
+
+4xx touch gbot
+ response:[400 TO 499]  AND request_header_agent: ("AdsBot-Google" OR "Googlebot" OR "GoogleOther")
+
+5xx touch gbot
+response:[500 TO 504]  AND request_header_agent: ("AdsBot-Google" OR "Googlebot" OR "GoogleOther")
+slowness for old  kibanan
+request_duration:>5
+
+
+new  kibana query
+
+for 4xxx
+response >= 400 and response <= 499
+
+for 5xxx
+response >= 500 and response <= 504
+slowness for new kibana
+request_duration > 5
+
+
+4xx www user
+response:[400 TO 499] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"api" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"/list" And !request:"JdSocial" AND !request:"jdpay2" AND !request:"_next"
+
+5XX ww user
+response:[500 TO 504] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"api" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"/list" And !request:"JdSocial" AND !request:"jdpay2" AND !request:"_next"
+
+4xx www gbot
+response:[400 TO 499] AND request_header_agent: ("AdsBot-Google" OR "Googlebot")
+5xx www gbot
+response:[500 TO 504] AND request_header_agent: ("AdsBot-Google" OR "Googlebot")
+
+4xx touch user
+response:[400 TO 499] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"api" AND !request:"response.txt" AND !request_header_agent:"GoogleOther"
+
+5xx touch user
+response:[500 TO 504] AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"api" AND !request:"response.txt" AND !request_header_agent:"GoogleOther"
+
+4xx touch gbot
+ response:[400 TO 499]  AND request_header_agent: ("AdsBot-Google" OR "Googlebot" OR "GoogleOther")
+
+5xx touch gbot
+response:[500 TO 504]  AND request_header_agent: ("AdsBot-Google" OR "Googlebot" OR "GoogleOther")
+slowness for old  kibanan
+request_duration:>5
+
+
+new  kibana query
+
+for 4xxx
+response >= 400 and response <= 499
+
+for 5xxx
+response >= 500 and response <= 504
+slowness for new kibana
+request_duration > 5
+
+#################################################
+
+www and touch user kibana:- 192.168.12.159:5601
+
+www user 4xx query
+
+response:>=400 AND response:<=499 AND !request:"analytics" AND !request:"manage_campaign.php" AND !request:"travel" AND !request:"functions" AND !request_header_agent:"AdsBot-Google " AND !request:"free_listing.php" AND !request_header_agent:"Googlebot" AND !request:"api" AND !request:"edit_list" AND !request:"booklab-timeslot" AND !request:"analyticsapis" AND !request_header_agent:"Applebot" AND !request:"favIcon.ico" AND !request:"buildtpro" AND !request:"manifest.json" AND !request:"/list" AND !request:"JdSocial" AND !request:"jdpay2" AND !request:"_next"
+
+www user 5xx query
+
+response:>=500
+ AND response:<=504 AND !request:"analytics" AND
+!request:"manage_campaign.php" AND !request:"travel" AND
+!request:"functions" AND !request_header_agent:"AdsBot-Google " AND
+!request:"free_listing.php" AND !request_header_agent:"Googlebot" AND
+
+touch user 4xx query
+
+response:>=400
+ AND response:<=499 AND !request:"analytics" AND
+!request:"manage_campaign.php" AND !request:"travel" AND
+!request:"functions" AND !request_header_agent:"AdsBot-Google " AND
+!request:"free_listing.php" AND !request_header_agent:"Googlebot" AND
+!request:"edit_list" AND !request:"booklab-timeslot" AND
+!request:"analyticsapis" AND !request_header_agent:"Applebot" AND
+!request:"favIcon" AND !request:"buildtpro" AND
+!request:"manifest.json" AND !request:"api" AND !request:"response.txt"
+AND !request_header_agent:"GoogleOther"
+
+touch user 5xx query
+
+response:>=500
+ AND response:<=504 AND !request:"analytics" AND
+!request:"manage_campaign.php" AND !request:"travel" AND
+!request:"functions" AND !request_header_agent:"AdsBot-Google " AND
+!request:"free_listing.php" AND !request_header_agent:"Googlebot" AND
+!request:"api" AND !request:"edit_list" AND !request:"booklab-timeslot"
+AND !request:"analyticsapis" AND !request_header_agent:"Applebot" AND
+!request:"favIcon.ico" AND !request:"buildtpro" AND
+!request:"manifest.json" AND !request:"/list" AND !request:"JdSocial"
+AND !request:"jdpay2" AND !request:"_next"
+
+
+www gbot kibana ip:- 192.168.29.121:5601
+touch gbot kibana ip:- 192.168.41.27:5601
+
+www gbot 4xx query
+
+response:[400 TO 499] AND request_header_agent: ("AdsBot-Google" OR "Googlebot" OR "GoogleOther")
+
+www gbot 5xx query
+
+response:[500 TO 504] AND request_header_agent: ("AdsBot-Google" OR "Googlebot" OR "GoogleOther")
+
+touch gbot 4xx query
+
+response:[400 TO 499]  AND request_header_agent: ("AdsBot-Google" OR "Googlebot" OR "GoogleOther")
+
+touch gbot 5xx query
+
+response:[500 TO 504]  AND request_header_agent: ("AdsBot-Google" OR "Googlebot" OR "GoogleOther") 
+
+wap kibana ip:- 192.168.29.121:5601  
+
+4xx query
+
+response:[400 TO 499]
+
+5xx query
+
+response:[400 TO 499]
+
+lme services/profile kibana ip:- 192.168.41.27:5601
+
+4xx query
+
+response:[400 TO 499]
+
+5xx query
+
+response:[400 TO 499]
+
+mapi user servers kibana ip:- 192.168.41.166:5601
+
+4xx query
+
+response >= 400 and response <= 499 
+
+5xx query
+
+response >= 500 and response <= 599  
+
+mapi gbot servers kibana ip:- 192.168.41.166:5601
+
+4xx query
+
+response:[400 TO 499]
+
+5xx query
+
+response:[400 TO 499]
+
+auto api servers kibana ip:- 192.168.41.210:5601
+
+4xx query
+
+response >= 400 and response <= 499 
+
+5xx query
+
+response >= 500 and response <= 599
+
+
+b2b api servers kibana ip:- 192.168.41.128:5601
+
+4xx query
+
+response >= 400 and response <= 499 
+
+5xx query
+
+response >= 500 and response <= 599
+
+webservices and category api servers kibana ip:- 192.168.42.193:5601
+
+4xx query
+
+response >= 400 and response <= 499 
+
+5xx query
+
+response >= 500 and response <= 599
+
+
+jd-trk api servers kibana ip:- 192.168.24.42:5601
+
+4xx query
+
+response >= 400 and response <= 499 
+
+5xx query
+
+response >= 500 and response <= 599
+
+
+Hippa servers kibana ip:- 192.168.31.48:5601
+
+Kernel logs kibana ip:- 192.168.38.157:5601
+
+mysql and mongo slow logs kibana ip:-192.168.12.162:5601
+
+
+
+Grafana modules to monitor
+
+grafan ip:192.168.41.12:3000
+
+##########################################################################################################
+
+find /var/www/production/pdf_centralised/jdrr_cert_gen/image_pdf -type f -size +1G| xargs du -hsc | sort -nr
+
+find /var/log/nginx/BACKUP/ -type f -name \*xz -mtime +28 -exec rm -fv {} \;
+
+
+find /var/www/production/pdf_centralised/jdrr_cert_gen/image_pdf -type f -name \*.pdf -mtime +50 -exec rm -fv {} 
+
+find /var/www/production/pdf_centralised/jdrr_cert_gen/image_pdf -type f  -mtime +50 \;
+###########################################################################################################
+to take mysql empty backup
+mysqldump -R --no-data -u root -p test > test.sql
+###########################################################################################################
+
+ju5tD1@lcr0mA
+sudo cat *.processlist_full | grep -v "system user" | grep 192.168.131.66 | grep -v "sleep"
+d3V0psJu5D1#lAdM1n
+DR_requirement work.
+sudo nproc && sudo free -g && sudo dmidecode -t1 && df -hT
+
+/home/saiprasad-10101286
+
+mongo --host 192.168.12.154 --port 27017 --username admin --password 'admin@123'
+
+vai_su_5tD1@lcr0mA*
+ #######################################
+Mysql root password for 192.168.24.126 : $C17H35COONa
+Mysql root password for 192.168.24.208 :   C17h35coona!
+Mysql root password for 192.168.16.170 :   C17h35coona!
+Mysql root password for 192.168.16.164 :   C17h35coona!
+Mysql root password for 192.168.16.32 :   C17h35coona!
+Mysql root password for 192.168.16.165 :   C17h35coona!
+Mysql root password for 192.168.42.186 : C17h35coona@#
+Mysql root password for 192.168.42.187 : C17h35coona@#
+Mysql root password for 192.168.15.17 : pM7f5Gj2K50n
+Mysql root password for 192.168.15.19 : pRw0sYss9)h
+mysql root password for 192.168.16.95 : C17h35coona@#
+mysql root password for 192.168.16.94 : C17h35coona@#
+Mysql root password for 192.168.39.80 : C17h35coona@#
+mysql root password for 192.168.39.55 : C17h35coona@#
+mysql root password for 192.168.39.56 : C17h35coona@#
+mysql root password for 192.168.13.123 : dBr00TP@55my
+
+/home/saiprasad-10101286/Merge_Payment_Transfer_june25_01_30.txt
+
+    iptables -I INPUT -p tcp -s localhost --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.17.222 --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.17.223 --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.17.221 --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.11.123 --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.13.123 --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.151.123 --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.151.124 --dport 3306 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 3306 -j DROP
+
+elasticsearch:x:993:991:elasticsearch user:/nonexistent:/sbin/nologin
+
+yum install install elasticsearch-6.3.1-1.noarch
+yum install jdk1.8*
+yum install java-1.8.0-openjdk
+/etc/sysctl.conf
+sysctl -p /etc/sysctl.conf
+set uid and gid sasme like existing cluster
+usermod -u 993 elasticsearch
+groupmod -g 992 elasticsearch
+chown elasticsearch.elasticsearch /etc/elasticsearch -R
+Copy files from existing servers 192.168.41.120
+/etc/sysconfig/elasticsearch
+/etc/elasticsearch/elasticsearch.yml ( Edit and add 2 new servers IP )
+/etc/elasticsearch/jvm.options
+/usr/lib/systemd/system/elasticsearch.service
+/opt/elastic_status.sh
+/etc/xinetd.d/xinetd-elasticcheck
+yum install nfs-utilsl
+mkdir /b2b_user_elastic_backup2 mkdir /b2b_user_elastic_backup
+edit /etc/fstab and add NFS for backup, also format and mount elastic partition as xfs
+start elasticsearch service
+Wait till cluster health turns green
+Repeat the same on other server
+Modilfy /etc/elasticsearch/elasticsearch.yml  on all other servers and add 2 new servers IP
+
+############################################################################################3
+
+
+usermod -u 993 elasticsearch
+groupmod -g 991 elasticsearch
+
+
+
+192.168.12.189
+UUID=dfb98b01-b2ba-4e18-a3d9-09f07709700a  /var/lib/elasticsearch     xfs    defaults,_netdev,noatime,auto 0 0
+
+
+
+192.168.12.183
+UUID=2b46d3b9-eac5-489d-a26a-1f161dbb5d5e  /var/lib/elasticsearch     xfs    defaults,_netdev,noatime,auto 0 0
+
+
+
+192.168.12.223
+UUID=063be12e-8f3f-41d8-8c3f-53720cd914ae  /var/lib/elasticsearch     xfs    defaults,_netdev,noatime,auto 0 0
+
+
+    iptables -I INPUT -p tcp -s localhost --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.17.222 --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.17.223 --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.17.221 --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.39.139 --dport 3306 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 3306 -j DROP
+
+
+POA for mysql root password change for 192.168.39.81 tonight after 11pm
+
+NOTE : Don't pass mysql root password in terminal
+
+1. Need to take server OOP. 
+
+2. Need to alter the mysql password for the root user.
+
+3. Need to add the mysql root user details in the health check file in /opt. ( reference server 192.168.16.170 )
+
+4. Need to add mysql root user details in below listed files.( reference server 192.168.16.170 )
+
+4(a) /etc/logrotate.d/mysql , /etc/logrotate.d/mysql_audit, /etc/logrotate.d/mysql_audit_15m
+
+4(b) /scripts/mysql_audit_flush-logs.sh
+
+4(c) /scripts/sysmon.sh (or) /scripts/db_sysmon.sh (need to monitor processlist in sysmon and also " show processlist" in mysql)
+
+5. Need to monitor the audit log file  for 30mins after change
+
+5(a) /var/lib/SQL/data/audit.log (or) /var/lib/SQL/mysql/audit.log
+
+6. Need to add mysql user details in nagios checks.
+
+7. After the activity take server into production.
+
+-uroot -pC17h35coona@#
+
+C17h35coona@#
+
+Take out of production secondary server.
+192.168.42.229
+rs.status()  #keep this for future use
+db.shutdownServer()
+192.168.42.229 - take this one out of production
+Login on primary and remove given secondary server
+sudo mongo --host 192.168.42.222 --username admin --password 
+admin@123 
+use admin
+rs.remove("history_mongo-rs2:27017")
+Run the below command on mongoshell of 192.168.42.229 , tonight after 10 PM.
+db.shutdownServer()
+and comment below lines in /etc/mongod.conf and start mongo service as standalone 
+#replication:
+  #replSetName: jdsprod
+  #enableMajorityReadConcern: false
+#check and verify on 
+> rs.status()
+{
+    "ok" : 0,
+    "errmsg" : "not running with --replSet",
+    "code" : 76,
+    "codeName" : "NoReplicationEnabled"
+}
+
+###################################################################################################
+MYSQL UPGRADE
+###################################################################################################
+POA MySQL upgrade from 5.7 to 8.0 192.168.17.222
+
+1.stop cron and Put iptables on all servers 192.168.17.222
+    iptables -I INPUT -p tcp -s localhost --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.17.222 --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.17.223 --dport 3306 -j ACCEPT
+    iptables -I INPUT -p tcp -s 192.168.17.221 --dport 3306 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 3306 -j DROP
+
+take mysql database and user dump on all 192.168.17.222
+stop slave once lag is zero on all slaves 
+stop mysql service on 17.222
+
+2. uninstall mysql.5.7 and install /ldaphome/rajveer-10018295/MYSQL_COMMERICAL_8.0.25_el6.tar.gz on 192.168.17.222
+    copy /etc/my.cnf_8.0 /etc/my.cnf 
+    chown -R mysql.mysql /var/lib/SQL
+
+3. start mysql on 192.168.17.222
+4. verify mysqld.log 
+5. if everything is working fine stop and start mysql again and do flush privileges
+6. Start all slaves and wait till lag zero
+    create user rajveer_10018295@172.129.87.234 identified by 'Justdial@1234Forpa55'; grant select on *.* rajveer_10018295@172.129.87.234;flush privileges; (if this ok otherwise restore mysqldump from 17.221 to 17.222)
+7. create database TEST_MYSQL8_UPGRED on 17.222 and check on all slaves are replicated or not 
+8. iptables -F
+9. check all nagios check
+
+##################################################################
+192.168.13.48
+gt 12 10
+
+
+Server migration activity completed on 192.168.12.53
+Old IP:- 192.168.13.48
+
+Server migration activity completed on 192.168.38.30
+Old IP:- 192.168.38.37
+
+[root@12-34-IDC ~]# rpm -qa | grep -i docker
+docker-ce-20.10.24-3.el7.x86_64
+docker-ce-cli-23.0.4-1.el7.x86_64
+docker-ce-rootless-extras-23.0.4-1.el7.x86_64
+docker-compose-plugin-2.17.2-1.el7.x86_64
+docker-buildx-plugin-0.10.4-1.el7.x86_64
+
+#################################################################
+
+cd /home/saiprasad/
+ls -lrth
+cd docker
+ls -lrth
+yum localinstall docker-*
+wget https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.6.20-3.1.el7.x86_64.rpm
+ls -lrth
+yum localinstall containerd.io-1.6.20-3.1.el7.x86_64.rpm
+yum localinstall docker-*
+docker ps
+service docker status
+service containerd  status
+service containerd  start
+service docker   start
+service docker status
+service containerd  status
+docker ps
+docker ps -a
+iptables -L
+#################################################################
+REDIS CALL 
+192.168.12.232 login and do the steps.
+1> sudo mysql -Bse "SELECT docid FROM  test.city_wise_contract_active WHERE  done_flag =7 ;" > /home/saiprasad/docid.txt
+ll -lrth
+cat docid.txt | wc -l
+scp docid.txt web_backup@192.168.6.75:
+
+192.168.6.75 login and do the steps.
+cd ~web_backup/
+ll -lrth
+ls -lrth /scripts/redis/log/manual_url/docid.txt   >>>>>>>>>>>check the  docid.txt 
+mv docid.txt /scripts/redis/log/manual_url/
+ls -lrth /scripts/redis/log/manual_url/docid.txt
+LOGGED IN ON JENKIN 
+Docid_Source  Text-File
+from camelcase_reprocess
+TAKE A BUILD
+AFTER JENKIN RUN CHECK 
+tailf /tmp/purged_total_docid.txt
+ps  auuxxxwwffffff | grep -i curl
+
+#################################################################
+Take out of production secondary server.
+
+192.168.42.229
+rs.status()  #keep this for future use
+db.shutdownServer()
+
+192.168.42.229 - take this one out of production
+
+Login on primary and remove given secondary server
+sudo mongo --host 192.168.42.222 --username admin --password 
+
+admin@123 
+
+use admin
+
+rs.remove("history_mongo-rs2:27017")
+
+Run the below command on mongoshell of 192.168.42.229 , tonight after 10 PM.
+
+db.shutdownServer()
+
+and comment below lines in /etc/mongod.conf and start mongo service as standalone 
+
+#replication:
+  #replSetName: jdsprod
+  #enableMajorityReadConcern: false
+
+#check and verify on 
+
+
+> rs.status()
+{
+  "ok" : 0,
+  "errmsg" : "not running with --replSet",
+  "code" : 76,
+  "codeName" : "NoReplicationEnabled"
+}
+
+
+Command to run compact collections (ref Doc : https://www.mongodb.com/docs/manual/reference/command/compact/):
+
+db.runCommand( { compact: "tbl_contract_update_trail_ahmedabad" } ) ----Done
+db.runCommand( { compact: "tbl_contract_update_trail_bangalore" } ) 
+db.runCommand( { compact: "tbl_contract_update_trail_chennai" } )-------Running 
+db.runCommand( { compact: "tbl_contract_update_trail_delhi" } ) 
+db.runCommand( { compact: "tbl_contract_update_trail_hyderabad" } )
+db.runCommand( { compact: "tbl_contract_update_trail_kolkata" } ) 
+db.runCommand( { compact: "tbl_contract_update_trail_mumbai" } ) 
+db.runCommand( { compact: "tbl_contract_update_trail_pune" } ) 
+
+db.tbl_contract_update_trail_ahmedabad.totalSize()/1000/1000/1000 -----Done
+db.tbl_contract_update_trail_bangalore.totalSize()/1000/1000/1000
+db.tbl_contract_update_trail_chennai.totalSize()/1000/1000/1000  ------Runing
+db.tbl_contract_update_trail_delhi.totalSize()/1000/1000/1000  ------------Last
+db.tbl_contract_update_trail_hyderabad.totalSize()/1000/1000/1000
+db.tbl_contract_update_trail_kolkata.totalSize()/1000/1000/1000
+db.tbl_contract_update_trail_mumbai.totalSize()/1000/1000/1000-----Last
+db.tbl_contract_update_trail_pune.totalSize()/1000/1000/1000
+
+1. /var/lib/mongo/ --  take space details
+
+2. db.tbl_contract_update_trail_chennai.totalSize()/1000/1000/1000  ------Take details
+
+
+db.tbl_contract_update_trail_chennai.totalSize()/1000/1000/1000;
+new ISODate();
+db.runCommand( { compact: "tbl_contract_update_trail_chennai" } );
+new ISODate();
+db.tbl_contract_update_trail_chennai.totalSize()/1000/1000/1000;
+
+
+
+
+4. db.tbl_contract_update_trail_ahmedabad.totalSize()/1000/1000/1000   ------take details after every query exq.
+
+ 5.  192.168.42.229 - take this in production -------After activity by login on primary server 192.168.42.222
+     
+     use admin
+   
+     rs.add("history_mongo-rs2:27017") 
+     
+     
+     
+     rs0:PRIMARY> rs.status()
+######################################################################################
+POA for kernel upgrade activity on mysql-slave audit server's
+Check hardware details of server,if physical server take console from system team.
+sudo dmidecode -t1
+sudo ps -aux | grep filebeat (check before activity )
+sudo wget -O /tmp/check_server_details.sh http://172.29.0.123/download/check_server_details.sh && sudo sh /tmp/check_server_details.sh
+Check server is in production or OOP
+Check mysql processlist and lag (If lag is zero then perform the below steps)
+Take server OOP (check time-stap for audit logs and stop mysql after 15min interval.)
+Stop slave gracefully by below command. (Paste the password manually at each steps)
+sudo mysql -p -Bse "flush tables;" && sudo mysql -p -Bse "stop slave;" && sudo mysql -p -Bse "flush tables;" && sudo mysql -p -Bse "flush tables;" && sudo mysql -p -Bse 'show slave status\G' > slave_status.txt && sudo mysql -p -Bse "flush tables;" && sudo systemctl stop mysqld && sudo systemctl status mysqld
+sudo systemctl status mysqld service if stop then check other services which all are running also stop them all.
+sudo yum update kernel-*
+After kernel upgrade reboot the server
+Start all service.
+check slave status. If slave is not running start the slave.(wait till lag become zero)
+After lag become zero put server in production.(Take details for audit logs.)
+sudo sh /scripts/mysql_audit_flush-logs.sh
+echo "kernel details after upgrading;"; ip r l && date && sudo uname -r && sudo rpm -qa | grep kernel --- Take Screen shot update in the ticket
+sudo ps -aux | grep filebeat (check after activity)
+Tonight kernel upgrade activity on 192.168.39.66
+Kinldy find the POA below
+5:32
+#!/bin/bash
+cp -r /etc/yum.repos.d /etc/yum.repos.d_bkp_date +"%Y%m%d%H%M%S"
+sed -i 's/mirrorlist=/#mirrorlist=/g' /etc/yum.repos.d/CentOS-*
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+yum clean all
+#####################################################################################
+
+Linux Boot Process Illustrated
+The diagram below shows the steps.
+Step 1 - When we turn on the power, BIOS (Basic Input/Output System) or UEFI (Unified Extensible Firmware Interface) firmware is loaded from non-volatile memory, and executes POST (Power On Self Test).
+Step 2 - BIOS/UEFI detects the devices connected to the system, including CPU, RAM, and storage.
+Step 3 - Choose a booting device to boot the OS from. This can be the hard drive, the network server, or CD ROM.
+Step 4 - BIOS/UEFI runs the boot loader (GRUB), which provides a menu to choose the OS or the kernel functions.
+Step 5 - After the kernel is ready, we now switch to the user space. The kernel starts up systemd as the first user-space process, which manages the processes and services, probes all remaining hardware, mounts filesystems, and runs a desktop environment.
+Step 6 - systemd activates the default. target unit by default when the system boots. Other analysis units are executed as well.
+Step 7 - The system runs a set of startup scripts and configure the environment.
+Step 8 - The users are presented with a login window. The system is now ready.
+
+##################################################################################
+Steps to change traffix & take downtime :
+All fetch traffic should route to Cluster 1 - EnableRedis value should change from 3 to 1.
+Dual Purge should be paused during the downtime, Change EnableRedisPurge value from 3 to 0. This will stop purging into redis and all company_info_redis.php will throw 400 status code to identify failed one. Note down the time(X)
+Monitor CompanyDetails.php API is ok.
+Linux can go for primary switchover on server IP 192.168.41.212
+Monitor Redis health on both the clusters, and move on with the activity.
+At the end of the activity, monitor Redis health is OK.
+Enable Dual read for traffic to read from cluster 1 or 2 in shuffle -> EnableRedis value should change from 1 to 3.
+Resume dual purge - EnableRedisPurge value from 0 to 3 -> This will start dual purging and the company_info_redis.php will get 200 with success. Note down the time(Y)
+Monitor Companydetails.php API is ok, No alerts.
+Need to Re-process company_info_redis.php with 400 status codes or all requests between time X & Y.
+####################################################################################
+yum install install elasticsearch-6.3.1-1.noarch
+yum install jdk1.8*
+yum install java-1.8.0-openjdk
+/etc/sysctl.conf
+sysctl -p /etc/sysctl.conf
+set uid and gid sasme like existing cluster
+usermod -u 993 elasticsearch
+groupmod -g 992 elasticsearch
+chown elasticsearch.elasticsearch /etc/elasticsearch -R
+Copy files from existing servers 192.168.41.120
+/etc/sysconfig/elasticsearch
+/etc/elasticsearch/elasticsearch.yml ( Edit and add 2 new servers IP )
+/etc/elasticsearch/jvm.options
+/usr/lib/systemd/system/elasticsearch.service
+/opt/elastic_status.sh
+/etc/xinetd.d/xinetd-elasticcheck
+yum install nfs-utils
+mkdir /b2b_user_elastic_backup2 mkdir /b2b_user_elastic_backup
+edit /etc/fstab and add NFS for backup, also format and mount elastic partition as xfs
+start elasticsearch service
+Wait till cluster health turns green
+Repeat the same on other server
+Modilfy /etc/elasticsearch/elasticsearch.yml  on all other servers and add 2 new servers IP
+####################################################################################

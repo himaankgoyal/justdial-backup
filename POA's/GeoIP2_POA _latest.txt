@@ -1,0 +1,133 @@
+CENTOS 7
+
+Changes in GeoIP Configuration
+---------------------------------------------------------
+
+1) Take backup of existing geoip configuration 
+
+	cp /etc/GeoIP.conf /home/tejas/GeoIP.conf
+
+2) Update geoiupdate package to version 2.5.0-1.el7.x86_64 (if its already on same version ignore this step.)
+
+	yum update geoipupdate 
+
+3) Make changes to GeoIP.conf file. Remove old configuration lines and add below and save the file
+
+	UserId 41662
+	LicenseKey etlEoukG0gMF
+	EditionIDs GeoIP2-City GeoIP2-Country GeoLite2-ASN 106 133
+
+4) Run geoipupdate
+
+	sudo /usr/bin/geoipupdate -d /usr/share/GeoIP
+
+
+5) Check if you files have been downloaded.
+	
+	ls -l /usr/share/GeoIP/GeoIP2-City.mmdb /usr/share/GeoIP/GeoIP2-Country.mmdb /usr/share/GeoIP/GeoLite2-ASN.mmdb
+
+
+
+Installing Requiste package for GeoIP2 usage.
+---------------------------------------------------------
+
+1) Install rpms from epel.repo
+
+	yum install libmaxminddb-devel-1.2.0-6.el7.x86_64 libmaxminddb-1.2.0-6.el7.x86_64
+
+
+
+Nginx Changes for GeoIp2 
+----------------------------------------------------------------------------
+
+1) Take backup of /etc/nginx directory 
+2) Use yumdownloader to download rpms of current installed nginx version and nginx modules on server
+3) add nginx repo nginx on centos 7 
+		vim /etc/yum.repos.d/nginx.repo
+		[nginx]
+		name=nginx repo
+		baseurl=https://nginx.org/packages/centos/$releasever/$basearch/
+		gpgcheck=0
+		enabled=1
+		
+4) Take server OOP and shutdown nginx service.
+
+5) yum update nginx package to  1:1.20.2-1.el7.ngx
+
+	yum update nginx nginx-*
+
+6) Download geoip2 so file from below link and copy the so file to /usr/lib64/nginx/modules/
+
+	sudo wget -O /usr/lib64/nginx/modules/ngx_http_geoip2_module.so http://172.29.0.123/download/NGINX_1_20_2_GEOIP2_COMPILED/ngx_http_geoip2_module.so 
+
+7) Set appropriate permissions
+
+	  sudo chown root.root /usr/lib64/nginx/modules/ngx_http_geoip2_module.so
+	  sudo chmod 755 /usr/lib64/nginx/modules/ngx_http_geoip2_module.so
+	
+
+8) Check if nginx and vhost configuration in /etc/nginx/conf.d  and /etc/nginx file has been changed. Restore from backup taken step 1 if the files are removed.
+
+
+9) Download the geoip.conf which will be included in nginx.conf from below link
+
+	sudo wget  -O /etc/nginx/geoip.conf  http://172.29.0.123/download/GEOIP2/geoip.conf
+	
+	Set appropriate Ownership to nginx user
+	
+	chown nginx.nginx /etc/nginx/geoip.conf
+
+10) Add changes to /etc/nginx/nginx.conf and /etc/nginx/fastcgi_geoip_params
+
+	       a) Include /etc/nginx/geoip.conf in /etc/nginx/nginx.conf 
+	       
+	       Add the line below   include /etc/nginx/conf.d/*.conf; in /etc/nginx/nginx.conf
+	     	        
+			   include /etc/nginx/geoip.conf;		
+
+
+		b) Comment any geoip if present in /etc/nginx/nginx.conf
+
+		search for geoip /etc/nginx/nginx.conf and comment the below lines if present in /etc/nginx/nginx.conf
+		
+			    #geoip_country /usr/share/GeoIP/GeoIP.dat; 
+    			    #geoip_city  /usr/share/GeoIP/GeoIPCity.dat;
+			    #geoip_proxy 0.0.0.0/0;
+			    #geoip_proxy_recursive on;
+
+
+		c) Load geoip2 module in /etc/nginx/nginx.conf 
+		
+		Add the below line after load_module "/usr/lib64/nginx/modules/ngx_http_geoip_module.so";
+	
+			load_module "/usr/lib64/nginx/modules/ngx_http_geoip2_module.so";
+	
+
+		d) Changes to /etc/nginx/fastcgi_geoip_params.
+
+		Add following lines at the end of file.
+		### GEOIP2
+		fastcgi_param GEOIP2_ADDR $http_x_forwarded_for;
+		fastcgi_param GEOIP2_ADDR $setforwardip;
+		fastcgi_param GEOIP2_COUNTRY_CODE $geoip2_data_country_code;
+		fastcgi_param GEOIP2_CITY_COUNTRY_CODE $geoip2_data_country_code;
+		fastcgi_param GEOIP2_LATITUDE $geoip2_data_location_latitude;
+		fastcgi_param GEOIP2_LONGITUDE $geoip2_data_location_longitude;
+		fastcgi_param GEOIP2_CITY $geoip2_data_city_name;
+		fastcgi_param GEOIP2_COUNTRY_NAME $geoip2_data_country_name;
+		fastcgi_param GEOIP2_CITY_COUNTRY_NAME $geoip2_data_country_name;
+		fastcgi_param GEOIP2_REGION_NAME  $geoip2_data_region_name;  
+		fastcgi_param GEOIP2_CONTINENT_CODE $geoip2_data_continent_code;
+		
+		e) Change variables_hash_max_size config if not present add if present modify the value from 1024 to 2048 in /etc/nginx/nginx.conf
+		
+			variables_hash_max_size 2048;
+				
+
+
+11)  Run Nginx syntax check and start nginx service.
+
+	sudo nginx  -t 
+	sudo service nginx start
+     
+                                                

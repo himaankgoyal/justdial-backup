@@ -1,0 +1,46 @@
+mongo --host shardsvr1 -u svradmin -p secureSvradmin --port 27017 --authenticationDatabase admin
+ 
+ mongos> use admin
+ switched to db admin
+
+rs.isMaster().primary
+
+
+db.createUser({user: “vishwa”, pwd: “vishwa”, roles: [ { role: “readWrite”, db: “db_refer_earn” } ]
+
+to check lag in mongo
+#use admin 
+#rs.printSecondaryReplicationInfo()
+#db.getUsers()
+#db.getUser("admin", { showAuthenticationRestrictions: true })
+
+db.createUser({user: "bulkextract", pwd: "BuLkExTrACt6789", roles: [ "readWriteAnyDatabase" ], authenticationRestrictions:[{ clientSource:["192.168.24.86","192.168.24.89"]}]})
+
+db.createUser({user: "rahulmondal_10149427", pwd: "EglWEsTYpsha24!", roles: [ { role: "readWrite", db: "devAdminDashboardConfigDB" } ], authenticationRestrictions:[{ clientSource:["10.10.22.148","172.29.183.72"]}]})
+
+db.createUser({user: "ajayjp", pwd: "ajayjp@24", roles: [ "readAnyDatabase" ], authenticationRestrictions:[{ clientSource:["10.10.55.120","172.29.182.155,"172.29.87.119"]}]})
+
+db.getUser('shravank')
+
+db.updateUser("admin" {pwd: "",  roles: [ { role: "root", db: "admin" }, {role: "readWrite", db: "yourDatabase"} ], authenticationRestrictions:[{ clientSource:[""]}]})
+ 
+ db.updateUser( "db_misbackend", { roles : [{ role : "readWriteAnyDatabase", db : "admin" }], authenticationRestrictions: [{ clientSource: ["192.168.29.159","192.168.16.198"]}]})
+ 
+db.updateUser( "content_process", { roles : [{ role : "readWriteAnyDatabase", db : "admin" }]}) 
+ 
+ db.system.users.update({"user":"oldname"}, {$set:{"user":"newname"}})
+ db.system.users.update({"user":"yourOldUserName"}, {$set:{"user":"yourNewUserName"}});
+ db.changeUserPassword("rajkumary", "Raj4#$Yadav_987")
+ db.changeUserPassword("rajy", "Raj4#$Yadav_987")
+
+ db.dropUser("admin")
+ 
+ mongo --username mongo-admin --password 'P@a5swOrD' --authenticationDatabase admi
+
+"192.168.13.65","192.168.41.92","192.168.41.138","192.168.41.243","192.168.35.126"
+
+
+db.createUser({user: "content_process1", pwd: "C0nTent_pR0$3S",roles : [{ role : "readWriteAnyDatabase", db : "admin" }]})
+
+
+Please Update the user : content_process and moving secondary to primary mongodb-server : 192.168.13.201

@@ -1,0 +1,70 @@
+POA for elasticsearch setup
+
+check version of both java and elasticsearch from refernce server
+sudo yum install java-1.8.0-openjdk java-1.8.0-openjdk-devel
+
+sudo yum localinstall elasticsearch-6.3.1.rpm
+
+/etc/multipath.conf
+multipath -ll (mount the give storage)
+
+mkfs.xfs /dev/mapper/mpathb --- 
+
+mkdir -p /var/lib/elasticsearch
+
+make fstab entry
+(UUID=889784c5-2061-4ff3-a111-8719a4202262       /var/lib/elasticsearch              xfs defaults,_netdev,noatime,auto        0 0)
+ 
+mount -av 
+
+sudo chown -R elasticsearch. /var/lib/elasticsearch
+
+Copy files from refernce server 192.168.XX.XX
+
+/opt  -- only required files like filebeat
+root  --- /var/spool/cron
+scripts
+/etc/hosts and make sure , make entry of new IP
+/etc/resolv.conf  --- check entry
+/etc/sysctl.conf  take from ref server
+/etc/sysconfig/elasticsearch
+
+/etc/elasticsearch/elasticsearch.yml ( Edit and add New server IP )
+
+/etc/elasticsearch/jvm.options
+
+
+ls -ld /var/lib/elasticsearch /var/log/elasticsearch/ /etc/elasticsearch/ /etc/sysconfig/elasticsearch (check permission on ref. server)
+
+sudo chown -R root.elasticsearch /etc/elasticsearch /etc/sysconfig/elasticsearch
+
+sudo chown -R elasticsearch.elasticsearch /var/lib/elasticsearch /var/log/elasticsearch/
+
+sysctl -p /etc/sysctl.conf
+
+set uid and gid sasme like existing cluster
+command
+cat /etc/passwd | grep -i elastic
+
+sudo usermod -u 993 elasticsearch
+
+sudo groupmod -g 992 elasticsearch
+
+/usr/lib/systemd/system/elasticsearch.service
+   check this entry if not add --        LimitMEMLOCK=infinity
+         sudo systemctl daemon-reload
+
+    add value in /etc/sysctl.conf
+
+   vm.max_map_count=262144
+
+sudo sysctl -p
+
+filebeat-8.8.2 install the same on new server
+
+filebeat-8.6install the same on new server
+
+
+once check with senior then only start the elasticsearch
+
+

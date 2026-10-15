@@ -1,0 +1,111 @@
+#!/bin/bash
+
+DATE=$(date +%Y%m%d)
+INTRVL=$(date +%H00)
+PRVHOUR=$(date +%H00 -d "18 hour ago")
+
+CLEANUP=$(date +%Y%m%d -d "8 days ago")
+
+USERIP="192.168.41.33"
+GBOTIP="192.168.41.105"
+
+INDEX_LIST="mkp_mart_sellers"
+
+line () {
+  echo "-----------------------------------------------"
+}
+
+
+echo -e "##### Start Time : `date` #####\n"
+
+echo -e "STEP:1 Registering Repository\n"
+
+curl -f -X PUT "${USERIP}:9200/_snapshot/ondemand_jd_b2b_${DATE}?pretty" -H 'Content-Type: application/json' -d "
+ {
+   \"type\": \"fs\",
+   \"settings\": {
+     \"location\": \"/b2b_user_elastic_backup/ondemand_jd_b2b_${DATE}\",
+     \"compress\": true
+   }
+ } 
+"
+
+echo -e "STEP:2 Taking snapshot @ `date`\n"
+
+curl -f -X PUT "${USERIP}:9200/_snapshot/ondemand_jd_b2b_${DATE}/${INDEX_LIST}_${DATE}?wait_for_completion=true&pretty" -H 'Content-Type: application/json' -d "
+{
+  \"indices\": \"${INDEX_LIST}\",
+  \"ignore_unavailable\": true,
+  \"include_global_state\": false
+  }
+}
+"
+[ $? -eq 0 ] && echo "Snapshot of ${INDEX_LIST} taken sucessfully from ${USERIP} cluster @ `date`"
+
+## Restore 
+
+echo -e "STEP:3 Registering Repository on ${GBOTIP}\n"
+
+curl -f -X PUT "${GBOTIP}:9200/_snapshot/ondemand_jd_b2b_${DATE}?pretty" -H 'Content-Type: application/json' -d "
+ {
+   \"type\": \"fs\",
+   \"settings\": {
+     \"location\": \"/b2b_user_elastic_backup/ondemand_jd_b2b_${DATE}\",
+     \"compress\": true
+   }
+ } 
+"
+
+echo -e "STEP:4 Restore data into gbot cluster @ `date`\n"
+
+for INDEX in ${INDEX_LIST//,/ }
+do
+
+echo -e "$INDEX - `date`"
+
+curl -X POST "${GBOTIP}:9200/_snapshot/ondemand_jd_b2b_${DATE}/${INDEX}_${DATE}/_restore?wait_for_completion=true" -H 'Content-Type: application/json' -d"
+{
+  \"indices\": \"$INDEX\",
+  \"ignore_unavailable\": true,
+  \"include_global_state\": false,              
+  \"rename_pattern\": \"(.+)\",
+  \"rename_replacement\": \"${INDEX}_${DATE}\",
+  \"include_aliases\": false
+}
+"
+
+
+curl -X POST "${GBOTIP}:9200/_aliases?pretty" -H 'Content-Type: application/json' -d"
+{
+  \"actions\" : [
+    { \"add\":  { \"index\": \"${INDEX}_${DATE}\", \"alias\": \"$INDEX\" } },
+    { \"remove_index\": { \"index\": \"${INDEX}_${CLEANUP}\" } }
+  ]
+}
+"
+
+curl -X POST "${GBOTIP}:9200/_aliases?pretty" -H 'Content-Type: application/json' -d"
+{
+  \"actions\" : [
+    { \"add\":  { \"index\": \"${INDEX}_${DATE}\", \"alias\": \"$INDEX\" } }
+  ]
+}
+"
+
+done
+
+[ $? -eq 0 ] && echo -e "Restored data sucessfully into gbot cluster @ `date`\n"
+
+
+# Clean up data
+#
+#echo "Clean-up 5 days old data"
+#curl -X DELETE "${USERIP}:9200/_snapshot/ondemand_jd_b2b_${CLEANUP}?pretty"
+#curl -X DELETE "${GBOTIP}:9200/_snapshot/ondemand_jd_b2b_${CLEANUP}?pretty"
+#
+#echo "Removing backup folder"
+#rm -rf /b2b_user_elastic_backup/ondemand_jd_b2b_${CLEANUP}
+#
+#echo "##### End Time : `date` #####"
+#line
+

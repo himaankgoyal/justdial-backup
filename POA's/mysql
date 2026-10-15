@@ -1,0 +1,136 @@
+mysql => for i in `cat tb.txt`; do echo $i;sudo mysqldump search_input $i | gzip -fv > $i.sql.gz;done (for dump)
+for i in *.sql; do echo $i; sudo mysql --socket=/var/lib/SQL_3307/data/mysql_server2.sock search_input < $i;done (for restoration)
+gunzip -f *.gz
+for i in `cat dialed.txt`;do echo $i; mysqldump --socket=/var/lib/SQL_3307/data/mysql_server2.sock trainee_test $i > $i.sql ;done
+
+##for i in `cat tt.txt`; do echo $i; sudo mysqldump --set-gtid-purged=OFF db_processing_earning_completed $i | gzip -fv > $i.sql.gz; done (for dump)
+
+##for i in `cat tt.txt`; do echo $i; sudo gunzip -fv $i.sql.gz; sudo mysql --socket=/var/lib/SQL_3307/mysql/mysql_server2.sock db_processing_earning_completed < $i.sql;done (for restoration)
+
+tar -cvzf xzy.tar.gz xzy/                                      {command to tar}
+tar -xvzf xyz.tar.gz -C /var/www/production/    (-c = path of destination)    {command to untar}
+
+sudo mysqldump DB_name table_name > table_name.sql {command used to take the dump}
+sudo mysql db_hotleads < tbl_campaign_logs.sql {command used to restore the dump}
+
+
+sudo mysqldump mysql > /home/prashant/mysql_12103.sql
+sudo mysqldump mysql user > /home/prashant/user_12103.sql
+
+
+sudo mysqldump --set-gtid-purged=OFF DB_Name Table_Name > Table_Name.sql (in case of gtid error)
+
+
+sed -i 's/tbl_comp_callcnt_rolling/tbl_comp_callcnt_rolling_ahm/g' tbl_comp_callcnt_rolling_ahm.sql
+sed -i 's/ORIGINAL_NAME/NAME_TO_BE_GIVEN/g' tbl_category_vertical_mapping.sql
+
+show processlist;
+select user from mysql.user;
+
+sudo mysql -e "select count(1) from DB_Name.table_name;"
+sudo mysql -e "select count(1) from  sms_email_sending.tmp_user_feedback_daily_counts;"
+
+select count(1) from DB_Name.Table_Name;
+
+
+mysql -u root -p
+
+
+
+mysql -u srinivasgajangi -p
+
+ select user,host from mysql.user where user like '%suprajits%';
+ select user,host from mysql.user where host like '%172.29.87.158%';
+ CREATE USER sanjayk@172.29.137.179 IDENTIFIED BY 's@nj@y@987';
+ GRANT ALL PRIVILEGES ON dbteam_temp.* TO 'sanjayk'@'172.29.137.179';
+ GRANT SELECT ON *.* TO 'nikhilgirijan'@'172.29.87.126';
+ show grants for nikhilgirijan@172.29.87.126;
+ GRANT FILE ON *.* TO 'ashwins'@'172.29.87.197';
+ flush privileges;
+ 
+ Revoke SELECT ON *.* from subhs@10.10.39.219; 
+ select user,host,authentication_string from mysql.user where user like '%aruns%';
+ 
+ show slave hosts;
+ 
+ GRANT SELECT ON *.* TO 'sunitha'@'172.29.180.10';
+ 
+ for i in {0..9}; do indexer -c /etc/sphinx/webport_sphinx-2.2.11-main.conf company_lineage_all_idx_$i --rotate >> /tmp/company_lineage_all_idx.log 2>&1;done
+
+# DROP USER 'niteshn'@'10.10.35.196';
+
+#select user,host,authentication_string from mysql.user where user like '%sanjayk%';
+
+#ALTER USER 'userName'@'localhost' IDENTIFIED BY 'New-Password-Here';
+#ALTER USER 'srinivasgajangi'@'172.29.5.64' IDENTIFIED BY 'srinivas@#12';
+ ALTER USER 'tarunh'@'172.29.180.63' IDENTIFIED BY 't@run_987';
+#UPDATE mysql.user SET Password=PASSWORD('foobar') WHERE USER='tom' AND Host='localhost';
+SET PASSWORD FOR 'local_user'@'localhost' = PASSWORD('new_password');
+rename user sales_mis@172.29.14.23 to ml_user@192.168.41.50;
+
+ update mysql.user set authentication_string='*D2FF2FD9B536838B0074A3B7222D57ABAF8F6004' WHERE user='ajayjp' and host='10.10.55.120';
+update mysql.user set password='*2E380A01B633A871ACB520852B5777731DDD0A9C' WHERE user='web_app' and host='192.168.12.40';
+
+
+SELECT table_name AS `Table`, round(((data_length + index_length) / 1024 / 1024), 2) `Size in MB` FROM information_schema.TABLES WHERE table_schema = 'db_name' AND table_name = 'table_name';
+
+SELECT table_name AS `Table`, round(((data_length + index_length) / 1024 / 1024 / 1024), 2) `Size in GB` FROM information_schema.TABLES WHERE table_schema = 'db_name' AND table_name = 'table_name';
+
+
+SHOW VARIABLES LIKE '%validate_password%';
+SET GLOBAL validate_password.policy=LOW;
+SET GLOBAL validate_password.policy=MEDIUM;
+
+
+mysql -uroot -p'Acc3s5T0my5qL' -Bse "show slave hosts" | awk '{print $2}' > /tmp/192.168.41.155.txt
+sudo mysql -Bse "show slave hosts" | awk '{print $2}'
+sudo mysql -Bse "show slave hosts" | awk '{print $2}' > /tmp/192.168.41.119.txt
+
+
+
+python 3, django framework installed or not latest stable version
+
+
+for i  in `cat adduser.txt`; do adduser $i; done
+
+
+
+yum-config-manager --add-repo http://yum.oracle.com/public-yum-ol6.repo
+
+| grep "2023-06-09T02:3"
+| grep "2023-06-09T05:3"
+
+cat /var/lib/SQL/mysql-slow.log | awk '/2023-06-09T02:39/,/2023-06-09T05:34/ {print $0}' > /home/himaankg/mysql-slow.log_38_25
+
+
+
+server application monitor. licensed (paid)
+
+npm model(network performance model)
+
+=sum(B2:B51) (excel formula) 
+
+
+
+sudo cat /proc/sys/kernel/hostname > /root/details_`date +%d%B%Y` ; sudo echo "################" >> /root/details_`date +%d%B%Y` ; sudo /sbin/ifconfig -a >> /root/details_`date +%d%B%Y` ; sudo echo "################" >> /root/details_`date +%d%B%Y` ;sudo  dmidecode -t system >> /root/details_`date +%d%B%Y` ; sudo echo "################" >> /root/details_`date +%d%B%Y` ; sudo df -h >> /root/details_`date +%d%B%Y` ;sudo  echo "################" >> /root/details_`date +%d%B%Y` ;sudo netstat -ntlp >> /root/details_`date +%d%B%Y` ; sudo echo "################" >> /root/details_`date +%d%B%Y` ; sudo multipath -ll >> /root/details_`date +%d%B%Y` ; sudo echo "################" >> /root/details_`date +%d%B%Y` ;sudo cat /etc/fstab >> /root/details_`date +%d%B%Y` ;sudo  echo "################" >> /root/details_`date +%d%B%Y` ; sudo mysqld_multi report >> /root/details_`date +%d%B%Y` ;sudo echo "################" >> /root/details_`date +%d%B%Y` ; sudo ps auxf >> /root/details_`date +%d%B%Y` ;sudo  echo "################" >> /root/details_`date +%d%B%Y` ;sudo mount >> /root/details_`date +%d%B%Y`
+
+
+
+
+Reset root password in mysql 8
+check root password and take login in mysql
+1) ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';
+2) take new session and take login with new password
+- UNINSTALL COMPONENT 'file://component_validate_password';
+- UPDATE mysql.user SET authentication_string='' WHERE User='root';
+- FLUSH PRIVILEGES;
+- INSTALL COMPONENT 'file://component_validate_password';
+
+
+
+
+
+
+
+Relay_Master_Log_File: mysql-bin.033735
+Exec_Master_Log_Pos: 198434588
